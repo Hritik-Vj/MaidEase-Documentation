@@ -657,23 +657,28 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <ul>
 <li>
 <p><strong>Problem:</strong> User tries to log in without entering an email or password.<br />
-<strong>Solution:</strong> The system displays a message saying <em>“Email and password are required.”</em></p>
+<strong>Solution:</strong> The system displays a message saying <em>“Email and password are required.”</em>
+  <strong>HTTP Status Code</strong> 400 Bad Request</p>
 </li>
 <li>
 <p><strong>Problem:</strong> User enters an incorrect email or password.<br />
-<strong>Solution:</strong> The system responds with <em>“Invalid email or password.”</em></p>
+<strong>Solution:</strong> The system responds with <em>“Invalid email or password.”</em>
+  <strong>HTTP Status Code</strong> 401 Unauthorized</p>
 </li>
 <li>
 <p><strong>Problem:</strong> A deactivated or deleted user tries to log in.<br />
-<strong>Solution:</strong> The system shows <em>“Your account has been deactivated.”</em></p>
+<strong>Solution:</strong> The system shows <em>“Your account has been deactivated.”</em>
+  <strong>HTTP Status Code</strong> 403 Forbidden</p>
 </li>
 <li>
 <p><strong>Problem:</strong> An unauthenticated user tries to access restricted pages (e.g., Bookings or Profile).<br />
-<strong>Solution:</strong> The system redirects to the login screen with an <em>“Access denied”</em> message.</p>
+<strong>Solution:</strong> The system redirects to the login screen with an <em>“Access denied”</em> message.
+  <strong>HTTP Status Code</strong> 401 Unauthorized</p>
 </li>
 <li>
 <p><strong>Problem:</strong> A customer attempts to access maid-only features (like updating availability).<br />
-<strong>Solution:</strong> The system shows <em>“You don’t have permission to perform this action.”</em></p>
+<strong>Solution:</strong> The system shows <em>“You don’t have permission to perform this action.”</em>
+  <strong>HTTP Status Code</strong> 403 Forbidden</p>
 </li>
 </ul>
 <hr />
@@ -681,23 +686,28 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <ul>
 <li>
 <p><strong>Problem:</strong> Customer selects a time slot when the maid is already booked.<br />
-<strong>Solution:</strong> The system notifies the customer with <em>“Selected time slot is unavailable. Please choose another.”</em></p>
+<strong>Solution:</strong> The system notifies the customer with <em>“Selected time slot is unavailable. Please choose another.”</em>
+  <strong>HTTP Status Code</strong> 409 Conflict</p>
 </li>
 <li>
 <p><strong>Problem:</strong> Customer tries to confirm a booking without selecting a service or time.<br />
-<strong>Solution:</strong> The system prompts <em>“Please select a service and time before proceeding.”</em></p>
+<strong>Solution:</strong> The system prompts <em>“Please select a service and time before proceeding.”</em>
+  <strong>HTTP Status Code</strong> 400 Bad Request</p>
 </li>
 <li>
 <p><strong>Problem:</strong> A maid receives overlapping bookings.<br />
-<strong>Solution:</strong> The system prevents the new booking and displays <em>“You already have a booking for this time.”</em></p>
+<strong>Solution:</strong> The system prevents the new booking and displays <em>“You already have a booking for this time.”</em>
+  <strong>HTTP Status Code</strong> 409 Conflict</p>
 </li>
 <li>
 <p><strong>Problem:</strong> Customer tries to cancel a booking that has already been completed.<br />
-<strong>Solution:</strong> The system blocks the request with <em>“Completed bookings cannot be canceled.”</em></p>
+<strong>Solution:</strong> The system blocks the request with <em>“Completed bookings cannot be canceled.”</em>
+  <strong>HTTP Status Code</strong> 409 Conflict</p>
 </li>
 <li>
 <p><strong>Problem:</strong> Maid tries to accept a booking already confirmed by another maid.<br />
-<strong>Solution:</strong> The system displays <em>“This booking is no longer available.”</em></p>
+<strong>Solution:</strong> The system displays <em>“This booking is no longer available.”</em>
+  <strong>HTTP Status Code</strong> 409 Conflict</p>
 </li>
 </ul>
 <hr />
@@ -705,19 +715,23 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <ul>
 <li>
 <p><strong>Problem:</strong> Maid saves a profile without filling all required fields (like skills or hourly rate).<br />
-<strong>Solution:</strong> The system highlights missing fields with <em>“Please complete all required details.”</em></p>
+<strong>Solution:</strong> The system highlights missing fields with <em>“Please complete all required details.”</em>
+  <strong>HTTP Status Code</strong> 400 Bad Request</p>
 </li>
 <li>
 <p><strong>Problem:</strong> User uploads an unsupported file format or an oversized image.<br />
-<strong>Solution:</strong> The system shows <em>“Invalid file format or file size too large.”</em></p>
+<strong>Solution:</strong> The system shows <em>“Invalid file format or file size too large.”</em>
+  <strong>HTTP Status Code</strong> 415 Unsupported Media Type</p>
 </li>
 <li>
 <p><strong>Problem:</strong> Maid adds overlapping time slots in availability.<br />
-<strong>Solution:</strong> The system alerts <em>“Time slots cannot overlap.”</em></p>
+<strong>Solution:</strong> The system alerts <em>“Time slots cannot overlap.”</em>
+  <strong>HTTP Status Code</strong> 409 Conflict</p>
 </li>
 <li>
 <p><strong>Problem:</strong> Logged-out user attempts to edit their profile.<br />
-<strong>Solution:</strong> The system redirects to the login page with a warning message.</p>
+<strong>Solution:</strong> The system redirects to the login page with a warning message.
+  <strong>HTTP Status Code</strong> 401 Unauthorized</p>
 </li>
 </ul>
 <hr />
@@ -725,15 +739,18 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <ul>
 <li>
 <p><strong>Problem:</strong> Customer tries to post a review before the booking is completed.<br />
-<strong>Solution:</strong> The system prevents it and shows <em>“You can only review completed bookings.”</em></p>
+<strong>Solution:</strong> The system prevents it and shows <em>“You can only review completed bookings.”</em>
+  <strong>HTTP Status Code</strong> 400 Bad Request</p>
 </li>
 <li>
 <p><strong>Problem:</strong> Customer attempts to submit multiple reviews for the same service.<br />
-<strong>Solution:</strong> The system displays <em>“You’ve already reviewed this booking.”</em></p>
+<strong>Solution:</strong> The system displays <em>“You’ve already reviewed this booking.”</em>
+  <strong>HTTP Status Code</strong> 409 Conflict</p>
 </li>
 <li>
 <p><strong>Problem:</strong> Maid tries to edit or delete a customer review.<br />
-<strong>Solution:</strong> The system responds with <em>“You are not authorized to modify reviews.”</em></p>
+<strong>Solution:</strong> The system responds with <em>“You are not authorized to modify reviews.”</em>
+  <strong>HTTP Status Code</strong> 403 Forbidden</p>
 </li>
 </ul>
 <hr />
@@ -741,11 +758,13 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <ul>
 <li>
 <p><strong>Problem:</strong> Email or SMS notification fails due to invalid contact information.<br />
-<strong>Solution:</strong> The system retries once and logs the failure in <strong>CloudWatch</strong> for review.</p>
+<strong>Solution:</strong> The system retries once and logs the failure in <strong>CloudWatch</strong> for review.
+  <strong>HTTP Status Code</strong> 502 Bad Gateway</p>
 </li>
 <li>
 <p><strong>Problem:</strong> User’s device blocks app notifications.<br />
-<strong>Solution:</strong> The app displays <em>“Notifications are disabled. Enable them to stay updated.”</em></p>
+<strong>Solution:</strong> The app displays <em>“Notifications are disabled. Enable them to stay updated.”</em>
+  <strong>HTTP Status Code</strong> 200 OK (Client-Side Warning)</p>
 </li>
 </ul>
 <hr />
@@ -753,15 +772,18 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <ul>
 <li>
 <p><strong>Problem:</strong> Network failure or backend downtime occurs.<br />
-<strong>Solution:</strong> The app shows a friendly message: <em>“We’re having trouble connecting. Please try again later.”</em></p>
+<strong>Solution:</strong> The app shows a friendly message: <em>“We’re having trouble connecting. Please try again later.”</em>
+  <strong>HTTP Status Code</strong> 503 Service Unavailable</p>
 </li>
 <li>
 <p><strong>Problem:</strong> User’s session expires while in use.<br />
-<strong>Solution:</strong> The system logs the user out and shows <em>“Session expired. Please log in again.”</em></p>
+<strong>Solution:</strong> The system logs the user out and shows <em>“Session expired. Please log in again.”</em>
+  <strong>HTTP Status Code</strong> 401 Unauthorized</p>
 </li>
 <li>
 <p><strong>Problem:</strong> Unexpected server error (FastAPI internal issue).<br />
-<strong>Solution:</strong> The system shows <em>“Something went wrong. Please try again.”</em> and logs the details for developers.</p>
+<strong>Solution:</strong> The system shows <em>“Something went wrong. Please try again.”</em> and logs the details for developers. 
+  <strong>HTTP Status Code</strong> 500 Internal Server Error</p>
 </li>
 </ul>
 

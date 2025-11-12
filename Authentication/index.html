@@ -555,6 +555,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#permission-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Summary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -652,12 +661,12 @@
 <h3 id="authentication_1"><strong>Authentication</strong><a class="headerlink" href="#authentication_1" title="Permanent link">&para;</a></h3>
 <p>MaidEase uses a <strong>Role-Based Access Control (RBAC)</strong> model to manage what each user can do within the platform.
 There are two main roles for authenticated users: Customer and Maid. Guests (unauthenticated users) have limited access.</p>
-<p><strong>Permission Summary</strong></p>
+<h2 id="permission-summary">Permission Summary<a class="headerlink" href="#permission-summary" title="Permanent link">&para;</a></h2>
+<p>This section outlines the permissions and accessible actions for each user role within the MaidEase platform.</p>
 <table>
 <thead>
 <tr>
 <th><strong>Feature / Action</strong></th>
-<th style="text-align: center;"><strong>Guest</strong></th>
 <th style="text-align: center;"><strong>Customer</strong></th>
 <th style="text-align: center;"><strong>Maid</strong></th>
 <th><strong>Conditions / Notes</strong></th>
@@ -668,33 +677,28 @@ There are two main roles for authenticated users: Customer and Maid. Guests (una
 <td><strong>Register / Login</strong></td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>All users can register and log in.</td>
+<td>Both users can register and log in.</td>
 </tr>
 <tr>
 <td><strong>View Maid Profiles</strong></td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>Guests see limited info; full access for logged-in users.</td>
+<td>Customers can view maid profiles maids can view other profiles for reference.</td>
 </tr>
 <tr>
 <td><strong>Create / Manage Maid Profile</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td>Only maids can edit their profile and availability.</td>
 </tr>
 <tr>
 <td><strong>Create Booking</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">❌</td>
 <td>Customers can book available maids.</td>
 </tr>
 <tr>
 <td><strong>View Bookings</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
 <td>Each user sees only their own bookings.</td>
@@ -702,13 +706,11 @@ There are two main roles for authenticated users: Customer and Maid. Guests (una
 <tr>
 <td><strong>Accept / Reject Booking</strong></td>
 <td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td>Only maids can accept or reject requests.</td>
 </tr>
 <tr>
 <td><strong>Cancel Booking</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
 <td>Either party can cancel before completion.</td>
@@ -716,13 +718,11 @@ There are two main roles for authenticated users: Customer and Maid. Guests (una
 <tr>
 <td><strong>Mark as Completed</strong></td>
 <td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td>Maids can mark jobs complete.</td>
 </tr>
 <tr>
 <td><strong>Post Review</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">❌</td>
 <td>Customers can review completed bookings.</td>
@@ -731,12 +731,10 @@ There are two main roles for authenticated users: Customer and Maid. Guests (una
 <td><strong>View Reviews</strong></td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
 <td>Publicly visible.</td>
 </tr>
 <tr>
 <td><strong>Notifications</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
 <td>Automated system-triggered updates.</td>
