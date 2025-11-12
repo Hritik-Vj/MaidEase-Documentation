@@ -547,15 +547,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#9-system-monitoring-and-maintenance" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. System Monitoring and Maintenance
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -818,20 +809,6 @@ This helps improve quality, builds trust, and creates a transparent reputation s
 </ul>
 <p>This keeps booking data accurate and prevents confusion between active and canceled jobs.</p>
 <p><a href="https://mermaid.live/edit#pako:eNpVkF1vmzAUhv_KkW9yk0YB2vAhdVICaUvXbVXSTdpML9xwAlbBjoxJ1qX57zMuRKqvju3nOee1j2QjcyQR2VbysCmZ0vCwygSYNadrbfbPcHHxBRY0bhsta1TwY4eigVjWuwo15rCQ8pWL4vnDWlg8puv2peYaVkybO2Ai74wahe652HIJvWGNnj-m8ItVPGcam6EfmOm6beAaRudZo15OOvndKu-wpKlo0ARf4Z7jAbjQsq8beGIvFX6yUrH_8G7oupQHWColVQQxE0Kee_zGIefS5rylD1y8Drem_xAyTcZw_plu843x3BS9fWvtO7rCDas2bWUeaIlRA_M9KlZg_0M9f2f5lP7c5QMKj0pueYVw4LqE72Z8b_ZKapV7mvBmV7G3IaMUn-wevrfwV7oUuTkhY1IonpNoy6oGx8S8oWbdnhw7PCO6xBozEpkyxy1rK52RTJyMt2Pij5Q1ibRqjalkW5TnPq1Nn3BWKFafTxWKHFUsW6FJ5Aa-a7uQ6Ej-ksjxgonrz3w3vPKmrueGY_JmKHc2mYVXgR9OLz3HDy_905j8s3Odycybho7jT_3ADxzHDU7_AYf04Nk"><img alt="" src="https://mermaid.ink/img/pako:eNpVkF1vmzAUhv_KkW9yk0YB2vAhdVICaUvXbVXSTdpML9xwAlbBjoxJ1qX57zMuRKqvju3nOee1j2QjcyQR2VbysCmZ0vCwygSYNadrbfbPcHHxBRY0bhsta1TwY4eigVjWuwo15rCQ8pWL4vnDWlg8puv2peYaVkybO2Ai74wahe652HIJvWGNnj-m8ItVPGcam6EfmOm6beAaRudZo15OOvndKu-wpKlo0ARf4Z7jAbjQsq8beGIvFX6yUrH_8G7oupQHWColVQQxE0Kee_zGIefS5rylD1y8Drem_xAyTcZw_plu843x3BS9fWvtO7rCDas2bWUeaIlRA_M9KlZg_0M9f2f5lP7c5QMKj0pueYVw4LqE72Z8b_ZKapV7mvBmV7G3IaMUn-wevrfwV7oUuTkhY1IonpNoy6oGx8S8oWbdnhw7PCO6xBozEpkyxy1rK52RTJyMt2Pij5Q1ibRqjalkW5TnPq1Nn3BWKFafTxWKHFUsW6FJ5Aa-a7uQ6Ej-ksjxgonrz3w3vPKmrueGY_JmKHc2mYVXgR9OLz3HDy_905j8s3Odycybho7jT_3ADxzHDU7_AYf04Nk?type=png" /></a></p>
-<hr />
-<h3 id="9-system-monitoring-and-maintenance"><strong>9. System Monitoring and Maintenance</strong><a class="headerlink" href="#9-system-monitoring-and-maintenance" title="Permanent link">&para;</a></h3>
-<p><strong>Actors:</strong> System (Automated Processes)</p>
-<p>Although this version of MaidEase does not have an admin interface, the system itself performs basic background maintenance to ensure smooth operation.</p>
-<p>These maintenance activities include:</p>
-<ul>
-<li><strong>Regular PostgreSQL database backups</strong> to prevent data loss.</li>
-<li><strong>Error logging and API monitoring</strong> to detect issues in real time.</li>
-<li><strong>Indexing key columns</strong> (like <code>email</code>, <code>maid_id</code>, and <code>status</code>) to maintain fast performance.</li>
-<li>Periodic cleanup of old or redundant data to improve efficiency.</li>
-</ul>
-<p>The backend (FastAPI) uses structured logging to track important actions like login attempts, bookings, and review submissions.
-This ensures stability, scalability, and accountability without needing a separate admin module.</p>
-<p><a href="https://mermaid.live/edit#pako:eNo90cFuozAQBuBXGfmcRgFaDBxWSkjSRkrVbKK9LPTg4oFYBRsZW202yruv45BywqP5fg_DmVSKI8lI3aqv6si0ge2-lOCeeXEw7vwODw-_YFHMrVEdM8jhcBoMdvCqpDBKC9nAAhshh_ebW3iQFzvUtdId7LGxLdOwU4NpNB5-b2HBqk_b30HuwbIYA2G-28BWNQMwyWGltSvtsVfa3MHSg1WRH7H6hCUz7IMNCBvJ8RtvbLycyQpHtPJoXeQtMgl_enhrOfhobiVn0vigsXntm5-LPVZKc3hlQhqU17TbZELCmg3GTTqCZw9eipUcrMb7itwCP0QrzOn2KXUtKoGyOo3oxaONQ9xVyIQ0WnCS1awdcEI6dPNfz-R8bS-JOWKHJcncK8ea2daUpJQX53om_yrVkcxo66RWtjn-5Nieu9-2FKzRrPupanTb0rmy0pAsTGjsU0h2Jt8kC6JkGtKYhulTNAujMJ2Qk-sK42mcPiU0nT1GAU0f6WVC_vl7g2kczdIgoDOa0CQIwuTyH0KrvMY"><img alt="" src="https://mermaid.ink/img/pako:eNo90cFuozAQBuBXGfmcRgFaDBxWSkjSRkrVbKK9LPTg4oFYBRsZW202yruv45BywqP5fg_DmVSKI8lI3aqv6si0ge2-lOCeeXEw7vwODw-_YFHMrVEdM8jhcBoMdvCqpDBKC9nAAhshh_ebW3iQFzvUtdId7LGxLdOwU4NpNB5-b2HBqk_b30HuwbIYA2G-28BWNQMwyWGltSvtsVfa3MHSg1WRH7H6hCUz7IMNCBvJ8RtvbLycyQpHtPJoXeQtMgl_enhrOfhobiVn0vigsXntm5-LPVZKc3hlQhqU17TbZELCmg3GTTqCZw9eipUcrMb7itwCP0QrzOn2KXUtKoGyOo3oxaONQ9xVyIQ0WnCS1awdcEI6dPNfz-R8bS-JOWKHJcncK8ea2daUpJQX53om_yrVkcxo66RWtjn-5Nieu9-2FKzRrPupanTb0rmy0pAsTGjsU0h2Jt8kC6JkGtKYhulTNAujMJ2Qk-sK42mcPiU0nT1GAU0f6WVC_vl7g2kczdIgoDOa0CQIwuTyH0KrvMY?type=png" /></a></p>
 
 
 

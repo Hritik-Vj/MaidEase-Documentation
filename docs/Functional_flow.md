@@ -20,6 +20,8 @@ The MaidEase platform uses a simple, role-based model to define user interaction
 
 5.  **Leaving a Review:** Once a job is marked as "Completed," the customer has the option to leave a rating and a review for the service provider.
 
+[![](https://mermaid.ink/img/pako:eNpdj0tPwzAQhP-KtQdOaXGTtnkckEj64AASohUHnB6sZJNaTezKcVqg6n_HNQUkfPJ6vpkdn6BQJUICVaOOxZZrQ9ZpLok992xl7Lwhg8EdSdmjqoUkt-QFa9EZ1IR3JOs7o1rUm29H6tCMpVodOyRPXJQduSGvAo_kWatKNNhd0cyhM7bCBgvjUEumSu3ICvVBFHgFZw6cs7Xmxc4BQtbENjP9T9bcIQuWqXbfoMF_CQsnL9kj8gPa-gdb5yotnfTA5rK0L-BBrUUJScWbDj2wH2v5ZYbTBc_BbLHFHBJ7LbHifWNyyOXZ-vZcvinVQmJ0b51a9fX2N6ffl9zgTPBa8z8EZYk6U700kPh06jIgOcE7JIHvD8f-ZBqHYRDGcRB58AHJKBrSMQ3oKAjpaBJOfP_swafbSodRHNGI-tNgTGkQR9PzF1b_jyk?type=png)](https://mermaid.live/edit#pako:eNpdj0tPwzAQhP-KtQdOaXGTtnkckEj64AASohUHnB6sZJNaTezKcVqg6n_HNQUkfPJ6vpkdn6BQJUICVaOOxZZrQ9ZpLok992xl7Lwhg8EdSdmjqoUkt-QFa9EZ1IR3JOs7o1rUm29H6tCMpVodOyRPXJQduSGvAo_kWatKNNhd0cyhM7bCBgvjUEumSu3ICvVBFHgFZw6cs7Xmxc4BQtbENjP9T9bcIQuWqXbfoMF_CQsnL9kj8gPa-gdb5yotnfTA5rK0L-BBrUUJScWbDj2wH2v5ZYbTBc_BbLHFHBJ7LbHifWNyyOXZ-vZcvinVQmJ0b51a9fX2N6ffl9zgTPBa8z8EZYk6U700kPh06jIgOcE7JIHvD8f-ZBqHYRDGcRB58AHJKBrSMQ3oKAjpaBJOfP_swafbSodRHNGI-tNgTGkQR9PzF1b_jyk)
+
 ---
 
 ### **Maid Functional Flow**
@@ -33,3 +35,5 @@ The MaidEase platform uses a simple, role-based model to define user interaction
 4.  **Updating Job Status:** Maids can update the status of a job, for example, by marking it as "Completed" after the work has been finished.
 
 5.  **Viewing Past Jobs and Reviews:** The maid dashboard includes a history of all completed jobs and a section to view reviews left by customers.
+
+[![](https://mermaid.ink/img/pako:eNo90Etv2zAMAOC_QvCwU5r5kcSPQ4HEea3YgCLpdpjdg2ozjjpbSiU5fQT575W1JjpR4kdS4AlLWRGmuGvka7lnysDDrBBgzzTfGnt_hJubW5jlG6q5NqTgO_yUNRfANPxivHr8r2eOZXmmiBkCqeD3oeqjeyV3vKEvljk2z7dkYHpkvGFPvOHmHbblnqru6ubOLezUkviRYCblPy5q2NBLR9roL7ZwbJlPy5IOpp-6oWcqzcVf3NK5VZ7J9tCQ_dVUa14LquBOPl3QyqF1_ofTK9wzbVwSvkHWaSNb6psfbe7i187_yBeiXwIOsFa8wnTHGk0DtL5l_R1PPS_Q7KmlAlMbVrRjXWMKLMTZ1h2Y-Ctli6lRna1Usqv31z6dW-Ocs1qx9vqqSFSkMtkJg2nge64Jpid8wzQMguEoGE-SKAqjJAnjAb5j6sdDb-SFnh9Gnj-OxkFwHuCHG-sN4yT2Yi-Ik3ASxhPfP38CH2Gkng?type=png)](https://mermaid.live/edit#pako:eNo90Etv2zAMAOC_QvCwU5r5kcSPQ4HEea3YgCLpdpjdg2ozjjpbSiU5fQT575W1JjpR4kdS4AlLWRGmuGvka7lnysDDrBBgzzTfGnt_hJubW5jlG6q5NqTgO_yUNRfANPxivHr8r2eOZXmmiBkCqeD3oeqjeyV3vKEvljk2z7dkYHpkvGFPvOHmHbblnqru6ubOLezUkviRYCblPy5q2NBLR9roL7ZwbJlPy5IOpp-6oWcqzcVf3NK5VZ7J9tCQ_dVUa14LquBOPl3QyqF1_ofTK9wzbVwSvkHWaSNb6psfbe7i187_yBeiXwIOsFa8wnTHGk0DtL5l_R1PPS_Q7KmlAlMbVrRjXWMKLMTZ1h2Y-Ctli6lRna1Usqv31z6dW-Ocs1qx9vqqSFSkMtkJg2nge64Jpid8wzQMguEoGE-SKAqjJAnjAb5j6sdDb-SFnh9Gnj-OxkFwHuCHG-sN4yT2Yi-Ik3ASxhPfP38CH2Gkng)
