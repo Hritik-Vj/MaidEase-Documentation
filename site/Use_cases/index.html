@@ -1,0 +1,873 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A smart platform to connect households with verified domestic workers.">
+      
+      
+        <meta name="author" content="Hritik Vijay">
+      
+      
+      
+        <link rel="prev" href="../Functional_flow/">
+      
+      
+        <link rel="next" href="../Tech_stack/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Use Cases - MaidEase Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#use-cases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MaidEase Documentation" class="md-header__button md-logo" aria-label="MaidEase Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MaidEase Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Use Cases
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Functional_flow/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Functional Flow
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Use Cases
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Tech_stack/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tech Stack
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Authentication/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Authentication
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Error_handling/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Error Handling
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MaidEase Documentation" class="md-nav__button md-logo" aria-label="MaidEase Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MaidEase Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functional_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functional Flow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Use Cases
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Cases
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-user-registration-and-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. User Registration and Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-maid-profile-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Maid Profile Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-browse-and-search-for-maids" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Browse and Search for Maids
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-booking-a-maid" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Booking a Maid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-viewing-and-managing-bookings" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Viewing and Managing Bookings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-booking-acceptance-and-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Booking Acceptance and Completion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-review-and-rating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Review and Rating System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-booking-cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Booking Cancellation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tech_stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tech Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Error Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="use-cases"><strong>Use Cases</strong><a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h1>
+<p>This document summarizes the main <strong>use cases</strong> for the <strong>MaidEase application</strong> — a simple web-based platform that helps customers find, book, and manage domestic helpers (maids) efficiently.</p>
+<p>The system allows <strong>customers</strong> to browse and book maids for various household services and enables <strong>maids</strong> to manage their bookings, schedules, and service status — all within a unified platform.</p>
+<hr />
+<h3 id="1-user-registration-and-login"><strong>1. User Registration and Login</strong><a class="headerlink" href="#1-user-registration-and-login" title="Permanent link">&para;</a></h3>
+<p><strong>Actors:</strong> Customer, Maid</p>
+<p>Both customers and maids can create an account on MaidEase by providing basic details such as <strong>name, email, password, phone number, and user role</strong> (maid or customer).</p>
+<p>When a user registers, the system validates their inputs to prevent duplicate emails or invalid entries. The data is securely stored in <strong>PostgreSQL</strong>, where passwords are encrypted before saving.</p>
+<p>Once registration is complete, users can <strong>log in</strong> using their credentials. Upon successful authentication, the backend generates a <strong>JWT (JSON Web Token)</strong>, which allows users to access role-specific features.</p>
+<p>Customers are redirected to a <strong>service browsing dashboard</strong>, while maids access a <strong>booking management dashboard</strong>. Both can also <strong>update their profiles</strong> to change their name, contact details, or password.</p>
+<p>This ensures a secure, role-based login mechanism with persistent sessions and clear separation of access permissions between the two roles.</p>
+<p><a href="https://mermaid.live/edit#pako:eNpVkElvwjAQhf-KNYeeAsoC2Q6VSsIqTtBSqQ4Hl0wWKbGR40Bb4L83CRQVn-z33sz35BPsRIzgQ1KI4y5jUpHlKuKkOS90rZr3lvR6z2REV5jmlUJJ3iqU22tk1HkB3bAij5lCMuf7Wt3MoDXPnXUmIV2zAxIlSMgU-2QVPqTm_HDNjek6E0cyllL8QcIOMqFLkeb8pk06bUo3KPPkmwQSY-QqZ0V1C0z_w2d0ihxlW3Dx_kqeyArjXOJOPYTvHebXDh3vocmsoy7omMeNAhqkMo_BTxosalCiLFn7hlMbj0BlWGIEfnONMWF1oSKI-KWZ2zP-IUQJvpJ1MylFnWb3PfW-_cowZ6lk5V2VyGOUgai5At90B263BfwTfIFvWG7fdGzH9IaWblqmp8F3kzLtvu0NXcfTB5bheAPnosFPxzX6tqV7huHojuu4hmFdfgGDOJ9g"><img alt="" src="https://mermaid.ink/img/pako:eNpVkElvwjAQhf-KNYeeAsoC2Q6VSsIqTtBSqQ4Hl0wWKbGR40Bb4L83CRQVn-z33sz35BPsRIzgQ1KI4y5jUpHlKuKkOS90rZr3lvR6z2REV5jmlUJJ3iqU22tk1HkB3bAij5lCMuf7Wt3MoDXPnXUmIV2zAxIlSMgU-2QVPqTm_HDNjek6E0cyllL8QcIOMqFLkeb8pk06bUo3KPPkmwQSY-QqZ0V1C0z_w2d0ihxlW3Dx_kqeyArjXOJOPYTvHebXDh3vocmsoy7omMeNAhqkMo_BTxosalCiLFn7hlMbj0BlWGIEfnONMWF1oSKI-KWZ2zP-IUQJvpJ1MylFnWb3PfW-_cowZ6lk5V2VyGOUgai5At90B263BfwTfIFvWG7fdGzH9IaWblqmp8F3kzLtvu0NXcfTB5bheAPnosFPxzX6tqV7huHojuu4hmFdfgGDOJ9g?type=png" /></a></p>
+<hr />
+<h3 id="2-maid-profile-management"><strong>2. Maid Profile Management</strong><a class="headerlink" href="#2-maid-profile-management" title="Permanent link">&para;</a></h3>
+<p><strong>Actors:</strong> Maid</p>
+<p>After registering, maids can build and maintain their service profile. This profile helps customers understand a maid’s background and decide which service provider suits them best.</p>
+<p>The maid profile includes details such as:</p>
+<ul>
+<li>Skills (e.g., Cleaning, Laundry, Babysitting)</li>
+<li>Experience (years in service)</li>
+<li>Availability schedule (days and hours)</li>
+<li>Hourly or per-service rate</li>
+<li>Short bio or description</li>
+</ul>
+<p>This information is stored in the <strong>Users table</strong> in PostgreSQL and linked to the maid’s user ID.</p>
+<p>Maids can update their profiles anytime — for instance, if they gain new experience, change rates, or update availability.
+When a customer browses for maids, these details are fetched dynamically and displayed on the frontend.</p>
+<p>The Maid Profile Management feature ensures that customer decisions are based on verified and relevant maid information.</p>
+<p><a href="https://mermaid.live/edit#pako:eNpVjstuwjAQRX9lNGtAJCnksahECW1TURUVlUWdLlzshEiOjRybPoB_bzABqV555pyZuXtcK8YxwUKor_WGagPz11xC-yZkadr6A_r9W7gjz7RiMFdlA5n8OBt3Dk3Jy5ZLWGhVVILDgpa841PHUzJhDJSGty2jhkPKDa1E0zmpc2ZkRUXlcCa31nRwdoIHhw5wT5Z0x8EoSKmhn7Th_6xM7s7eA1lu1BfMtFa6M-7dkUdyyXhOwmBp12veNIUV4qdTH52akdMNWFVN9SnczaltjKq5vuTOnPdEZpK1HexhqSuGSUFFw3vYijU91bg_6TmaDa95jkn7ZbygVpgcc3ls57ZUvitVY2K0bSe1suXmuse6oGlFS03ra1dzybieKisNJn408t0WTPb4jYkXRAM_HId-PAqGfuDHPfxpLX88GMejKIyHN4EXxjfhsYe_7q43GAfD2PPCYRiFkef50fEPhjOi-A"><img alt="" src="https://mermaid.ink/img/pako:eNpVjstuwjAQRX9lNGtAJCnksahECW1TURUVlUWdLlzshEiOjRybPoB_bzABqV555pyZuXtcK8YxwUKor_WGagPz11xC-yZkadr6A_r9W7gjz7RiMFdlA5n8OBt3Dk3Jy5ZLWGhVVILDgpa841PHUzJhDJSGty2jhkPKDa1E0zmpc2ZkRUXlcCa31nRwdoIHhw5wT5Z0x8EoSKmhn7Th_6xM7s7eA1lu1BfMtFa6M-7dkUdyyXhOwmBp12veNIUV4qdTH52akdMNWFVN9SnczaltjKq5vuTOnPdEZpK1HexhqSuGSUFFw3vYijU91bg_6TmaDa95jkn7ZbygVpgcc3ls57ZUvitVY2K0bSe1suXmuse6oGlFS03ra1dzybieKisNJn408t0WTPb4jYkXRAM_HId-PAqGfuDHPfxpLX88GMejKIyHN4EXxjfhsYe_7q43GAfD2PPCYRiFkef50fEPhjOi-A?type=png" /></a></p>
+<hr />
+<h3 id="3-browse-and-search-for-maids"><strong>3. Browse and Search for Maids</strong><a class="headerlink" href="#3-browse-and-search-for-maids" title="Permanent link">&para;</a></h3>
+<p><strong>Actors:</strong> Customer</p>
+<p>Customers can view and search for maids directly from their dashboard after logging in.
+The system provides a list of available maids along with their:</p>
+<ul>
+<li>Name and skillset</li>
+<li>Experience level</li>
+<li>Hourly rate or service charge</li>
+<li>Availability schedule</li>
+</ul>
+<p>Customers can use <strong>filters</strong> to refine their search results. For example:</p>
+<ul>
+<li>By skill type (e.g., Cleaning, Cooking, Babysitting)</li>
+<li>By experience range</li>
+<li>By price range</li>
+<li>By availability date</li>
+</ul>
+<p>When a customer applies these filters, the frontend (React.js PWA) sends a request to the FastAPI backend, which retrieves matching maid profiles from the <strong>PostgreSQL database</strong>.</p>
+<p>The goal of this use case is to help customers quickly find the right maid for their specific needs, without unnecessary manual searching or contact.</p>
+<p><a href="https://mermaid.live/edit#pako:eNpVkE9vozAQxb_KyGcSBWj4d1iJhKTNKqtNk8NKCz24MIBVg1nbtE2jfPc1hFaqL7bHvzfvjS8kFwWSiJRcvOU1lRr2x6wFs-L0pM39CWazH7BK173SokEJe1Ep2LVPN2o1Pq_T3x22kFBVPwsqC5jBSoo3hfCLskJN7HpkkzTuOn6GLeMapYrg9MI4t2Dz3qFk2OZowUGyYYtfKeP0mXGmz1OPZOyxSY9Icw2HPzGcsC0UHPFfj0qDFrClSseH3STYjIJtOlXhsR9cFByE0pXE0-MeSiFNTp3XrK2-Bd6O2ntjpo3m9TaNCSdKxvETuh-hh3TIMQ2Fhcmjeq7VkMeEnNCHEd2lCVMdp-eb14B8fu7E7UbuZ7ppC1MhFqkkK0hUUq7QIoZr6HAnlwHPiK6xwYxE5lhgSY1vRrL2anQdbf8K0ZBIy94opeir-qtP3xVUY8JoJWnzVZVmDJRr0beaRE6w9MYuJLqQdxLZbjB3fM93wqW7cFwntMjZUI4398Jl4IeLO9f2wzv_apGP0deee-4itG1_4Qd-YNtOcP0PqTbCEQ"><img alt="" src="https://mermaid.ink/img/pako:eNpVkE9vozAQxb_KyGcSBWj4d1iJhKTNKqtNk8NKCz24MIBVg1nbtE2jfPc1hFaqL7bHvzfvjS8kFwWSiJRcvOU1lRr2x6wFs-L0pM39CWazH7BK173SokEJe1Ep2LVPN2o1Pq_T3x22kFBVPwsqC5jBSoo3hfCLskJN7HpkkzTuOn6GLeMapYrg9MI4t2Dz3qFk2OZowUGyYYtfKeP0mXGmz1OPZOyxSY9Icw2HPzGcsC0UHPFfj0qDFrClSseH3STYjIJtOlXhsR9cFByE0pXE0-MeSiFNTp3XrK2-Bd6O2ntjpo3m9TaNCSdKxvETuh-hh3TIMQ2Fhcmjeq7VkMeEnNCHEd2lCVMdp-eb14B8fu7E7UbuZ7ppC1MhFqkkK0hUUq7QIoZr6HAnlwHPiK6xwYxE5lhgSY1vRrL2anQdbf8K0ZBIy94opeir-qtP3xVUY8JoJWnzVZVmDJRr0beaRE6w9MYuJLqQdxLZbjB3fM93wqW7cFwntMjZUI4398Jl4IeLO9f2wzv_apGP0deee-4itG1_4Qd-YNtOcP0PqTbCEQ?type=png" /></a></p>
+<hr />
+<h3 id="4-booking-a-maid"><strong>4. Booking a Maid</strong><a class="headerlink" href="#4-booking-a-maid" title="Permanent link">&para;</a></h3>
+<p><strong>Actors:</strong> Customer, Maid</p>
+<p>This is the core use case of the MaidEase platform. Customers can make bookings with available maids for specific services and time slots.</p>
+<p>The booking process involves the following steps:</p>
+<ol>
+<li>The customer selects a maid from the list.</li>
+<li>The customer chooses a service type (e.g., Cleaning).</li>
+<li>The customer selects a <strong>date</strong> and <strong>time slot</strong> (e.g., 10 AM to 12 PM).</li>
+<li>The customer confirms the booking request.</li>
+</ol>
+<p>Once submitted, the system creates a new record in the <strong>Bookings table</strong>, containing:</p>
+<ul>
+<li>Customer ID</li>
+<li>Maid ID</li>
+<li>Service ID</li>
+<li>Selected date and time</li>
+<li>Booking status (default = “pending”)</li>
+</ul>
+<p>The maid receives this booking request in her dashboard. She can either <strong>accept</strong> or <strong>reject</strong> it.</p>
+<ul>
+<li>If <strong>accepted</strong>, the status changes to <strong>“accepted.”</strong></li>
+<li>If <strong>rejected</strong>, the status updates to <strong>“canceled.”</strong></li>
+</ul>
+<p>After completion of the service, the maid marks it as <strong>“completed.”</strong></p>
+<p>This entire flow ensures smooth coordination between customer and maid, without needing third-party communication.</p>
+<p><a href="https://mermaid.live/edit#pako:eNptkU9z2jAQxb_Kji5cCINNgv_MtB0wkNAAkwnppXYOqrUGtbZEZTlpC3z3yrJNZzr4ZK1-7-3T7pGkkiEJSZbL93RPlYbVcyLAfJN4q835FW5uPsI0jqpSywIVbDHHVJewppwBFcwU1BtP8bWRTS0fxdFeyhJhRjVa6oUXCNtc6paLLDeLIykyrgqYSvmDix08488Ky46aWWoeL2ipJ09LiBQawxI2-G7IVCoGXHTaEl7ot7wLMrfSRdwZm9foqoQP0HtCwUyl14ILC97H9kHGFPmb6XA9z71lH46WnaQpHswkpDLU93oon84N9lBjp_b-BMu4bf7lwEx8BlpCr7lF1sVoNK3RCT5f00RUpGb8F83SxnlsokeyOORYT0fv8b-tPFpwddWzlV1MV5Zd_9t4vT7bYSM1zziyFlxbcBPPRV0hfbJTnJEwo3mJfWKUBa3P5FjjCTGpCkxIaH4ZZrTKdUIScTa6AxVfpSxIqFVllEpWu_3Fp7JZZ5zuFC0uVWV2iCqSldAkdP3x0LqQ8Eh-kdAZ-QPXG3tucDcauiM36JPfhnLHg3Fw53vB8HbkeMGtd-6TP7avMxiPhoHjeEPP93zHcf3zX9Ha-BQ"><img alt="" src="https://mermaid.ink/img/pako:eNptkU9z2jAQxb_Kji5cCINNgv_MtB0wkNAAkwnppXYOqrUGtbZEZTlpC3z3yrJNZzr4ZK1-7-3T7pGkkiEJSZbL93RPlYbVcyLAfJN4q835FW5uPsI0jqpSywIVbDHHVJewppwBFcwU1BtP8bWRTS0fxdFeyhJhRjVa6oUXCNtc6paLLDeLIykyrgqYSvmDix08488Ky46aWWoeL2ipJ09LiBQawxI2-G7IVCoGXHTaEl7ot7wLMrfSRdwZm9foqoQP0HtCwUyl14ILC97H9kHGFPmb6XA9z71lH46WnaQpHswkpDLU93oon84N9lBjp_b-BMu4bf7lwEx8BlpCr7lF1sVoNK3RCT5f00RUpGb8F83SxnlsokeyOORYT0fv8b-tPFpwddWzlV1MV5Zd_9t4vT7bYSM1zziyFlxbcBPPRV0hfbJTnJEwo3mJfWKUBa3P5FjjCTGpCkxIaH4ZZrTKdUIScTa6AxVfpSxIqFVllEpWu_3Fp7JZZ5zuFC0uVWV2iCqSldAkdP3x0LqQ8Eh-kdAZ-QPXG3tucDcauiM36JPfhnLHg3Fw53vB8HbkeMGtd-6TP7avMxiPhoHjeEPP93zHcf3zX9Ha-BQ?type=png" /></a></p>
+<hr />
+<h3 id="5-viewing-and-managing-bookings"><strong>5. Viewing and Managing Bookings</strong><a class="headerlink" href="#5-viewing-and-managing-bookings" title="Permanent link">&para;</a></h3>
+<p><strong>Actors:</strong> Customer, Maid</p>
+<p>Both customers and maids can view and manage their respective bookings through their dashboards.</p>
+<p><strong>Customer View:</strong></p>
+<ul>
+<li>Customers can see all the bookings they have made, along with the service type, date, and status.</li>
+<li>They can also cancel upcoming bookings if needed (before completion).</li>
+<li>Completed bookings remain listed for review and feedback purposes.</li>
+</ul>
+<p><strong>Maid View:</strong></p>
+<ul>
+<li>Maids see all assigned or pending bookings.</li>
+<li>They can review customer names, addresses (if provided), service types, and time slots.</li>
+<li>They have the ability to accept or reject new requests.</li>
+</ul>
+<p>The system retrieves data dynamically from the <strong>Bookings table</strong> in PostgreSQL.
+Each booking record is linked to the corresponding user IDs (for both customer and maid), making it easy to filter results and display relevant information per role.</p>
+<p>This use case ensures that both parties have full transparency and control over their bookings, minimizing confusion or scheduling conflicts.</p>
+<p><a href="https://mermaid.live/edit#pako:eNpNkV2XmjAQhv_KnFyzHgFXPi7a4-fqrm6tdntR9CKFEWghsUnQtup_bwhol6sM8z7zvpOcScwTJCHZF_wUZ1QoWKy3DPQ3iDZK1zt4ePgAw-hNooAFTyXM2a5RDE1rFH06IIMxldl3TkXSNkemOT4bbs0L_HhtGuO6cRlVUvESxQUm0dccTzAoChhy_jNn2mJJE9y9ly9pnlxg2kqlzFOGCXABK2SJRu5oS02M-1N0s4EalKA3UpW0dFiFFmxQHPP4ZvRkkJneRuWcgeIwoizGAt4OMS_febT6qdHPozoarPFoDFoJjFHRvLilmRvpcyMdxDEelKzDr_EHxvq4xl8VStWqZ0b9Ek2pVIPVXPsnOu7_2c0SkDNYcalSgZvPixZ9btCmeDHFIrq_jPbZC5SZnnXKVdYOTurboO2AhWGW0ZDXff10Emb0iPBFUCYPVCBT9xz1lbbY0mCv0YTVz08skoo8IeGeFhItou-_pHVNzrV8S1SGJW5JqI8J7mlVqC3ZsqvmDpR947wkoRKVJgWv0uw-pzJ5xzlNBS3vf3WmBMWIV0yR0PH7PTOFhGfym4S263ccr-85waPbdVwnsMgfrXL6nX7w6HtBt-faXtDzrhb5a3ztTt_tBrbtdT3f823b8a__ABAL-xo"><img alt="" src="https://mermaid.ink/img/pako:eNpNkV2XmjAQhv_KnFyzHgFXPi7a4-fqrm6tdntR9CKFEWghsUnQtup_bwhol6sM8z7zvpOcScwTJCHZF_wUZ1QoWKy3DPQ3iDZK1zt4ePgAw-hNooAFTyXM2a5RDE1rFH06IIMxldl3TkXSNkemOT4bbs0L_HhtGuO6cRlVUvESxQUm0dccTzAoChhy_jNn2mJJE9y9ly9pnlxg2kqlzFOGCXABK2SJRu5oS02M-1N0s4EalKA3UpW0dFiFFmxQHPP4ZvRkkJneRuWcgeIwoizGAt4OMS_febT6qdHPozoarPFoDFoJjFHRvLilmRvpcyMdxDEelKzDr_EHxvq4xl8VStWqZ0b9Ek2pVIPVXPsnOu7_2c0SkDNYcalSgZvPixZ9btCmeDHFIrq_jPbZC5SZnnXKVdYOTurboO2AhWGW0ZDXff10Emb0iPBFUCYPVCBT9xz1lbbY0mCv0YTVz08skoo8IeGeFhItou-_pHVNzrV8S1SGJW5JqI8J7mlVqC3ZsqvmDpR947wkoRKVJgWv0uw-pzJ5xzlNBS3vf3WmBMWIV0yR0PH7PTOFhGfym4S263ccr-85waPbdVwnsMgfrXL6nX7w6HtBt-faXtDzrhb5a3ztTt_tBrbtdT3f823b8a__ABAL-xo?type=png" /></a></p>
+<hr />
+<h3 id="6-booking-acceptance-and-completion"><strong>6. Booking Acceptance and Completion</strong><a class="headerlink" href="#6-booking-acceptance-and-completion" title="Permanent link">&para;</a></h3>
+<p><strong>Actors:</strong> Maid</p>
+<p>Once a maid receives a booking request, she can either <strong>accept</strong> or <strong>reject</strong> it based on her availability.</p>
+<p>If accepted, the booking status changes to <strong>“accepted,”</strong> and it appears in the maid’s list of confirmed tasks.
+If rejected, the booking is marked as <strong>“canceled.”</strong></p>
+<p>After completing the service, the maid updates the booking status to <strong>“completed.”</strong>
+This marks the end of the service flow, allowing the customer to submit feedback afterward.</p>
+<p>The <strong>status field</strong> in the Bookings table tracks all these changes:</p>
+<ul>
+<li>pending → accepted → completed</li>
+<li>pending → canceled (if rejected or canceled by customer)</li>
+</ul>
+<p>This mechanism ensures clear service progression and prevents duplicate bookings during the same time slot.</p>
+<p><a href="https://mermaid.live/edit#pako:eNp9j01TwjAQhv9KZi9egKEt9OugA-XLGfUA48WWQ0y2UGkbTFP8AP67IUV0PJhTdt_3eXd3D0xwhBDSXLyxNZWK3M2Tkug3iBdK10vSbl-TYXxPM07myDDbYUWGQmyycqUbrzVWatkgQ-ON9gPGcKuIkFp_QaZujo0enfRDox7IKP5O0YNUXZHHLacKOVGCXDUm5FfL32gTdyDj_9CIlgzzH3Rktpo0F0Si2Oao9AlqjWSBcpcxPBsnxjiNmzDyZ4SJPtOX7KlBZnFUV0oUKMmDUFma6U1Sff0EkT9TtjmbZ8Z8G49LrjvQgpXMOIQpzStsgaYLeqphf7InoBcsMIFQfzmmtM5VAkl51NyWlk9CFBAqWWtSinq1vuTUZvtRRleSFpeuxJKjjERdKght3_VNCoR7eIfQcvyO7bmeHfSdru3YQQs-tMt2O27Q972g23MsL-h5xxZ8mrlWx3W6gWV5Xc_3fMuy_eMXnUy3Xg"><img alt="" src="https://mermaid.ink/img/pako:eNp9j01TwjAQhv9KZi9egKEt9OugA-XLGfUA48WWQ0y2UGkbTFP8AP67IUV0PJhTdt_3eXd3D0xwhBDSXLyxNZWK3M2Tkug3iBdK10vSbl-TYXxPM07myDDbYUWGQmyycqUbrzVWatkgQ-ON9gPGcKuIkFp_QaZujo0enfRDox7IKP5O0YNUXZHHLacKOVGCXDUm5FfL32gTdyDj_9CIlgzzH3Rktpo0F0Si2Oao9AlqjWSBcpcxPBsnxjiNmzDyZ4SJPtOX7KlBZnFUV0oUKMmDUFma6U1Sff0EkT9TtjmbZ8Z8G49LrjvQgpXMOIQpzStsgaYLeqphf7InoBcsMIFQfzmmtM5VAkl51NyWlk9CFBAqWWtSinq1vuTUZvtRRleSFpeuxJKjjERdKght3_VNCoR7eIfQcvyO7bmeHfSdru3YQQs-tMt2O27Q972g23MsL-h5xxZ8mrlWx3W6gWV5Xc_3fMuy_eMXnUy3Xg?type=png" /></a></p>
+<hr />
+<h3 id="7-review-and-rating-system"><strong>7. Review and Rating System</strong><a class="headerlink" href="#7-review-and-rating-system" title="Permanent link">&para;</a></h3>
+<p><strong>Actors:</strong> Customer</p>
+<p>After a booking is completed, customers can provide feedback to rate their experience with the maid.
+This helps improve quality, builds trust, and creates a transparent reputation system for maids.</p>
+<p>Each review includes:</p>
+<ul>
+<li>The <strong>rating</strong> (from 1 to 5 stars)</li>
+<li>A <strong>text comment</strong> describing the experience</li>
+</ul>
+<p>When a customer submits a review:</p>
+<ol>
+<li>The system checks if the booking status is <strong>“completed.”</strong></li>
+<li>
+<p>A new record is inserted into the <strong>Reviews table</strong>, linked to:</p>
+</li>
+<li>
+<p>The <strong>Booking ID</strong></p>
+</li>
+<li>The <strong>Customer ID</strong></li>
+<li>The <strong>Maid ID</strong></li>
+<li>The maid’s overall rating can be averaged based on all received reviews.</li>
+</ol>
+<p>These reviews are displayed on the maid’s profile, helping future customers make better decisions.</p>
+<p><a href="https://mermaid.live/edit#pako:eNpVkF1vmzAUhv_KkW9yk0YB2vAhdVICaUvXbVXSTdpML9xwAlbBjoxJ1qX57zMuRKqvju3nOee1j2QjcyQR2VbysCmZ0vCwygSYNadrbfbPcHHxBRY0bhsta1TwY4eigVjWuwo15rCQ8pWL4vnDWlg8puv2peYaVkybO2Ai74wahe652HIJvWGNnj-m8ItVPGcam6EfmOm6beAaRudZo15OOvndKu-wpKlo0ARf4Z7jAbjQsq8beGIvFX6yUrH_8G7oupQHWColVQQxE0Kee_zGIefS5rylD1y8Drem_xAyTcZw_plu843x3BS9fWvtO7rCDas2bWUeaIlRA_M9KlZg_0M9f2f5lP7c5QMKj0pueYVw4LqE72Z8b_ZKapV7mvBmV7G3IaMUn-wevrfwV7oUuTkhY1IonpNoy6oGx8S8oWbdnhw7PCO6xBozEpkyxy1rK52RTJyMt2Pij5Q1ibRqjalkW5TnPq1Nn3BWKFafTxWKHFUsW6FJ5Aa-a7uQ6Ej-ksjxgonrz3w3vPKmrueGY_JmKHc2mYVXgR9OLz3HDy_905j8s3Odycybho7jT_3ADxzHDU7_AYf04Nk"><img alt="" src="https://mermaid.ink/img/pako:eNpVkF1vmzAUhv_KkW9yk0YB2vAhdVICaUvXbVXSTdpML9xwAlbBjoxJ1qX57zMuRKqvju3nOee1j2QjcyQR2VbysCmZ0vCwygSYNadrbfbPcHHxBRY0bhsta1TwY4eigVjWuwo15rCQ8pWL4vnDWlg8puv2peYaVkybO2Ai74wahe652HIJvWGNnj-m8ItVPGcam6EfmOm6beAaRudZo15OOvndKu-wpKlo0ARf4Z7jAbjQsq8beGIvFX6yUrH_8G7oupQHWColVQQxE0Kee_zGIefS5rylD1y8Drem_xAyTcZw_plu843x3BS9fWvtO7rCDas2bWUeaIlRA_M9KlZg_0M9f2f5lP7c5QMKj0pueYVw4LqE72Z8b_ZKapV7mvBmV7G3IaMUn-wevrfwV7oUuTkhY1IonpNoy6oGx8S8oWbdnhw7PCO6xBozEpkyxy1rK52RTJyMt2Pij5Q1ibRqjalkW5TnPq1Nn3BWKFafTxWKHFUsW6FJ5Aa-a7uQ6Ej-ksjxgonrz3w3vPKmrueGY_JmKHc2mYVXgR9OLz3HDy_905j8s3Odycybho7jT_3ADxzHDU7_AYf04Nk?type=png" /></a></p>
+<hr />
+<h3 id="8-booking-cancellation"><strong>8. Booking Cancellation</strong><a class="headerlink" href="#8-booking-cancellation" title="Permanent link">&para;</a></h3>
+<p><strong>Actors:</strong> Customer, Maid</p>
+<p>Sometimes, a booking may need to be canceled before completion — for example, if the customer changes plans or the maid becomes unavailable.</p>
+<p><strong>Cancellation Process:</strong></p>
+<ul>
+<li>Either the <strong>customer</strong> or <strong>maid</strong> can cancel a booking.</li>
+<li>The system validates that the booking is not already completed.</li>
+<li>The booking status changes to <strong>“canceled.”</strong></li>
+<li>A cancellation timestamp may be recorded for auditing.</li>
+</ul>
+<p>This keeps booking data accurate and prevents confusion between active and canceled jobs.</p>
+<p><a href="https://mermaid.live/edit#pako:eNpVkF1vmzAUhv_KkW9yk0YB2vAhdVICaUvXbVXSTdpML9xwAlbBjoxJ1qX57zMuRKqvju3nOee1j2QjcyQR2VbysCmZ0vCwygSYNadrbfbPcHHxBRY0bhsta1TwY4eigVjWuwo15rCQ8pWL4vnDWlg8puv2peYaVkybO2Ai74wahe652HIJvWGNnj-m8ItVPGcam6EfmOm6beAaRudZo15OOvndKu-wpKlo0ARf4Z7jAbjQsq8beGIvFX6yUrH_8G7oupQHWColVQQxE0Kee_zGIefS5rylD1y8Drem_xAyTcZw_plu843x3BS9fWvtO7rCDas2bWUeaIlRA_M9KlZg_0M9f2f5lP7c5QMKj0pueYVw4LqE72Z8b_ZKapV7mvBmV7G3IaMUn-wevrfwV7oUuTkhY1IonpNoy6oGx8S8oWbdnhw7PCO6xBozEpkyxy1rK52RTJyMt2Pij5Q1ibRqjalkW5TnPq1Nn3BWKFafTxWKHFUsW6FJ5Aa-a7uQ6Ej-ksjxgonrz3w3vPKmrueGY_JmKHc2mYVXgR9OLz3HDy_905j8s3Odycybho7jT_3ADxzHDU7_AYf04Nk"><img alt="" src="https://mermaid.ink/img/pako:eNpVkF1vmzAUhv_KkW9yk0YB2vAhdVICaUvXbVXSTdpML9xwAlbBjoxJ1qX57zMuRKqvju3nOee1j2QjcyQR2VbysCmZ0vCwygSYNadrbfbPcHHxBRY0bhsta1TwY4eigVjWuwo15rCQ8pWL4vnDWlg8puv2peYaVkybO2Ai74wahe652HIJvWGNnj-m8ItVPGcam6EfmOm6beAaRudZo15OOvndKu-wpKlo0ARf4Z7jAbjQsq8beGIvFX6yUrH_8G7oupQHWColVQQxE0Kee_zGIefS5rylD1y8Drem_xAyTcZw_plu843x3BS9fWvtO7rCDas2bWUeaIlRA_M9KlZg_0M9f2f5lP7c5QMKj0pueYVw4LqE72Z8b_ZKapV7mvBmV7G3IaMUn-wevrfwV7oUuTkhY1IonpNoy6oGx8S8oWbdnhw7PCO6xBozEpkyxy1rK52RTJyMt2Pij5Q1ibRqjalkW5TnPq1Nn3BWKFafTxWKHFUsW6FJ5Aa-a7uQ6Ej-ksjxgonrz3w3vPKmrueGY_JmKHc2mYVXgR9OLz3HDy_905j8s3Odycybho7jT_3ADxzHDU7_AYf04Nk?type=png" /></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "content.code.annotate", "content.code.copy", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
