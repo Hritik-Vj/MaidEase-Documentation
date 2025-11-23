@@ -12,6 +12,8 @@
         <meta name="author" content="Hritik Vijay">
       
       
+        <link rel="canonical" href="https://maidease.example.com/Schema%20design%20and%20Data%20Flow%20Diagram/">
+      
       
         <link rel="prev" href="../Authentication/">
       
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#schema-design-architecture" class="md-skip">
+        <a href="#schema-design-and-data-flow-diagrams" class="md-skip">
           Skip to content
         </a>
       
@@ -249,7 +251,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Use_cases/" class="md-tabs__link">
+      <a href="../use_cases/" class="md-tabs__link">
         
   
   
@@ -426,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Use_cases/" class="md-nav__link">
+      <a href="../use_cases/" class="md-nav__link">
         
   
   
@@ -501,19 +503,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Architecture
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -525,61 +514,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#database-schema-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Schema Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      System Architecture
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aws-specific-architecture-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      AWS Specific Architecture Diagram
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Flow
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -623,51 +557,63 @@
 
 
 
-<h1 id="schema-design-architecture"><strong>Schema Design &amp; Architecture</strong><a class="headerlink" href="#schema-design-architecture" title="Permanent link">&para;</a></h1>
+<h1 id="schema-design-and-data-flow-diagrams"><strong>Schema design and Data Flow Diagrams</strong><a class="headerlink" href="#schema-design-and-data-flow-diagrams" title="Permanent link">&para;</a></h1>
 <hr />
-<h3 id="database-schema-overview"><strong>Database Schema Overview</strong><a class="headerlink" href="#database-schema-overview" title="Permanent link">&para;</a></h3>
-<p>The PostgreSQL database schema is designed to be the single source of truth for the application. It is normalized to ensure data consistency and minimize redundancy.</p>
-<p><strong>Core Tables:</strong></p>
-<ol>
-<li>
-<p><strong>Users</strong><br />
-   Stores every account (customer or maid). Keep authentication and role here.</p>
-</li>
-<li>
-<p><strong>Maid profiles</strong><br />
-   Extra profile details for maids (skills, hourly rate, availability, rating, totals). One to one with <code>users</code> for rows where <code>role = 'maid'</code>.</p>
-</li>
-<li>
-<p><strong>Bookings</strong><br />
-   The transactional table: who booked whom, for what service/time, and the booking lifecycle (pending → accepted → completed, etc).</p>
-</li>
-<li>
-<p><strong>Reviews</strong><br />
-   Customer feedback tied to completed bookings. One review per booking (enforced in app logic).</p>
-</li>
-<li>
-<p><strong>Notifications</strong><br />
-   System-generated notifications (email/sms/in-app) created by the app or background worker and tracked until delivered.</p>
-</li>
-</ol>
+<h1 id="core-tables-overview">Core Tables Overview<a class="headerlink" href="#core-tables-overview" title="Permanent link">&para;</a></h1>
+<h2 id="1-users">1. Users<a class="headerlink" href="#1-users" title="Permanent link">&para;</a></h2>
+<p>The Users table is the main foundation of the whole platform.<br />
+Every person who uses the system is stored here.<br />
+This includes customers, maids, and even admins.</p>
+<p>It contains basic information:</p>
+<ul>
+<li>Name  </li>
+<li>Email  </li>
+<li>Hashed password  </li>
+<li>Phone number  </li>
+<li>Role (customer, maid, or admin)  </li>
+<li>Whether the account is active  </li>
+</ul>
+<p>For maids, this table also stores their service details:</p>
+<ul>
+<li>Bio  </li>
+<li>Skills  </li>
+<li>Years of experience  </li>
+<li>Hourly rate  </li>
+<li>Average rating  </li>
+</ul>
+<p>There is no separate maids table. If someone is a maid, their role and extra fields in this table describe them.</p>
+<hr />
+<h2 id="2-bookings">2. Bookings<a class="headerlink" href="#2-bookings" title="Permanent link">&para;</a></h2>
+<p>This table stores all the actual service activity that happens in the app.<br />
+Whenever a customer books a maid, a new booking record is created here.</p>
+<p>Each booking includes:</p>
+<ul>
+<li>The customer who created the booking  </li>
+<li>The maid who will provide the service  </li>
+<li>The service type they selected  </li>
+<li>The booking date and time slot  </li>
+<li>The current status of the booking (like pending, accepted, completed, or canceled)  </li>
+<li>The total amount  </li>
+<li>Any notes or instructions  </li>
+</ul>
+<hr />
+<h2 id="3-reviews">3. Reviews<a class="headerlink" href="#3-reviews" title="Permanent link">&para;</a></h2>
+<p>After a service is completed, customers can share feedback.<br />
+Those reviews are stored here.</p>
+<p>A review includes:</p>
+<ul>
+<li>The booking it is connected to  </li>
+<li>The customer who wrote the review  </li>
+<li>The maid who received the review  </li>
+<li>The rating  </li>
+<li>The comment  </li>
+<li>When the review was created or updated  </li>
+</ul>
+<p>This table powers the rating system and helps customers understand the quality of service different maids provide.</p>
 <hr />
 <p><strong>Mermaid ER Diagram (Data Modeling)</strong></p>
-<p><a href="https://mermaid.live/edit#pako:eNqtVm1v2jAQ_iuRv7BJtAqljJdvlKZb1gIVpN1UIUUmuQa3SRzZDpRR_vvOoSkQ0MrY8iXJ-Z7L3XOPz1kQj_tAWgTEJaOBoNEoHsUGXndDazA0FqsXfdk9x2C-cXu9Nt23B51v7YER0wh2rRBRFu6akwmPN7wd66djJFTKGRe-O6Fysl6zenddQ_AQjBH5VPJSqXgEolQuYWS_9HlENsLYXWvotLu3zoPhCaAKfJeq_es-hLC5vsxr7rbtS_d20L-yb6yPatemVIJw0X51XahnzHjBIp9ZGMq1cdht39zoGPCSgGAQe-DOgYoNFyzeGtgdY8JTEc5dgTWtF78P-70Lg06RYjoOwZUhV3uwdBpoIIuD7cwVVzR0n_hY7qcoTfzjKLzo96_t3tdD2Mv7WWRQr-kGF-2Xbccy_C0Wck0pFq0o2GUgEcyDgqSkoiqVmagSiH1kBzVFPQ8SrAkfWewmggcCpMQ3j0dJVq1-ptioEIri0x2mvq8Bx0nyaL4H1r1t_TiE7jHnz1jpPrYFTBnMDu_Eu3iL0sqIQL4iiNV_3pu9vmNf2Z22Y_d7x-7NP9CQ6ULNk9WoyUYXtltGcrvTueBkOn4CTxUqj7D_NDhIbRIZwtsjfgf-YZTpMH_P5Wq2v76enPBFYei1ME8cwrht-COmlue1hXjf49o5os8gc1Y_dhfgAZsiQusK0xdT3J4Gi4sRCtPkLVSu9jzLlXD3fnXTdSaYgk3vPf7b-tpMNQ9fTGYXoQQLAhAZgpRJIJhPWkqkUCY453TFeNJm0kXfCeChSTQsTsNQQ5aISWj8wHmUwwRPgwlpPdJQ4ttqSrwd1O8uqCkQHZ7GirSq1SwEaS3IC2lV6vXTqln7clat1xpmo9kskzlazVPTrJpNs9Fo1mv1eu18WSa_so-ap41mtVKrVxrnlbNqs3mGCPCZ4qK7-k3I_haWvwF2EF0-"><img alt="" src="https://mermaid.ink/img/pako:eNqtVm1v2jAQ_iuRv7BJtAqljJdvlKZb1gIVpN1UIUUmuQa3SRzZDpRR_vvOoSkQ0MrY8iXJ-Z7L3XOPz1kQj_tAWgTEJaOBoNEoHsUGXndDazA0FqsXfdk9x2C-cXu9Nt23B51v7YER0wh2rRBRFu6akwmPN7wd66djJFTKGRe-O6Fysl6zenddQ_AQjBH5VPJSqXgEolQuYWS_9HlENsLYXWvotLu3zoPhCaAKfJeq_es-hLC5vsxr7rbtS_d20L-yb6yPatemVIJw0X51XahnzHjBIp9ZGMq1cdht39zoGPCSgGAQe-DOgYoNFyzeGtgdY8JTEc5dgTWtF78P-70Lg06RYjoOwZUhV3uwdBpoIIuD7cwVVzR0n_hY7qcoTfzjKLzo96_t3tdD2Mv7WWRQr-kGF-2Xbccy_C0Wck0pFq0o2GUgEcyDgqSkoiqVmagSiH1kBzVFPQ8SrAkfWewmggcCpMQ3j0dJVq1-ptioEIri0x2mvq8Bx0nyaL4H1r1t_TiE7jHnz1jpPrYFTBnMDu_Eu3iL0sqIQL4iiNV_3pu9vmNf2Z22Y_d7x-7NP9CQ6ULNk9WoyUYXtltGcrvTueBkOn4CTxUqj7D_NDhIbRIZwtsjfgf-YZTpMH_P5Wq2v76enPBFYei1ME8cwrht-COmlue1hXjf49o5os8gc1Y_dhfgAZsiQusK0xdT3J4Gi4sRCtPkLVSu9jzLlXD3fnXTdSaYgk3vPf7b-tpMNQ9fTGYXoQQLAhAZgpRJIJhPWkqkUCY453TFeNJm0kXfCeChSTQsTsNQQ5aISWj8wHmUwwRPgwlpPdJQ4ttqSrwd1O8uqCkQHZ7GirSq1SwEaS3IC2lV6vXTqln7clat1xpmo9kskzlazVPTrJpNs9Fo1mv1eu18WSa_so-ap41mtVKrVxrnlbNqs3mGCPCZ4qK7-k3I_haWvwF2EF0-?type=png" /></a></p>
+<p><a href="https://mermaid.live/edit#pako:eNqtVF1r4zAQ_CtCz2lIajtO_XjX9AiF69HSOzgMQrE2tqg-jCSnzaX57yc7dpLGgbZQP0k7M6vd0VobnGkGOMFgrjnNDZWpQv57fJjdP6DNbtMEHufXiDP06_YQs85wlSOQlItetKC2AEZKau2zNqyHLyshiKISekhZaAVEVXIBpgcaLY4UC-23VCFuCc0cX_WTLbjuxewTF8Iewlw5BC8lGA4qA7IGao7QpdDUoUJXRqyJoQ5OIboCQ3OoMZ_9gDLPdVwCygz4JSPUnQGrkr0Bt6naLb7d3d3Of_549xaaWFZZpyUY4sGbU9DfDzsFOivArLjv2a1LOFOc9_fJ0wh703arrRnECu36WR11Vc9Cpx0VhEpdqb5EaQf2y7y7n_2ez_58zLqux3POfdrWepRO56DtMNNSgnJf1uPuF319vbjQm8OwJCjFXdVdazbF70nqXnr0PaNVdK7WgpaLDKw4PJ8_4Zi_r-mjgqaiIzIe4NxwhpMlFRYG2OeqKf7pai45xa4A_5jgWstgSSvhatnW60qq_motceJM5ZVGV3mxz7Pzt3389lEDioH5Xo8qTsZBkwMnG_yCkyCIhvFoHAfxOAzjcBR6dI2TaTQMJnE8ubyaXEXRNJhuB_hfc-poOA3CIAwvJ_E0jMaRh_4DaampUA"><img alt="" src="https://mermaid.ink/img/pako:eNqtVF1r4zAQ_CtCz2lIajtO_XjX9AiF69HSOzgMQrE2tqg-jCSnzaX57yc7dpLGgbZQP0k7M6vd0VobnGkGOMFgrjnNDZWpQv57fJjdP6DNbtMEHufXiDP06_YQs85wlSOQlItetKC2AEZKau2zNqyHLyshiKISekhZaAVEVXIBpgcaLY4UC-23VCFuCc0cX_WTLbjuxewTF8Iewlw5BC8lGA4qA7IGao7QpdDUoUJXRqyJoQ5OIboCQ3OoMZ_9gDLPdVwCygz4JSPUnQGrkr0Bt6naLb7d3d3Of_549xaaWFZZpyUY4sGbU9DfDzsFOivArLjv2a1LOFOc9_fJ0wh703arrRnECu36WR11Vc9Cpx0VhEpdqb5EaQf2y7y7n_2ez_58zLqux3POfdrWepRO56DtMNNSgnJf1uPuF319vbjQm8OwJCjFXdVdazbF70nqXnr0PaNVdK7WgpaLDKw4PJ8_4Zi_r-mjgqaiIzIe4NxwhpMlFRYG2OeqKf7pai45xa4A_5jgWstgSSvhatnW60qq_motceJM5ZVGV3mxz7Pzt3389lEDioH5Xo8qTsZBkwMnG_yCkyCIhvFoHAfxOAzjcBR6dI2TaTQMJnE8ubyaXEXRNJhuB_hfc-poOA3CIAwvJ_E0jMaRh_4DaampUA?type=png" /></a></p>
 <hr />
-<h3 id="system-architecture"><strong>System Architecture</strong><a class="headerlink" href="#system-architecture" title="Permanent link">&para;</a></h3>
-<p>The application follows a standard three-tier architecture, a common and effective model for structuring web applications.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[React.js Frontend] &lt;--&gt; [FastAPI Backend] &lt;--&gt; [PostgreSQL Database]
-</code></pre></div>
-<ul>
-<li><strong>Presentation Layer (React.js PWA):</strong> The client-side application that users interact with. It is responsible for rendering the UI and sending user-initiated requests to the backend.</li>
-<li><strong>Application Layer (FastAPI Backend):</strong> The server-side "brain" of the application. It contains all the business logic, handles API requests, manages user authentication, and communicates with the database.</li>
-<li><strong>Data Layer (PostgreSQL Database):</strong> The persistent storage layer where all application data is securely stored.</li>
-</ul>
-<p><strong>Interconnections:</strong></p>
-<ul>
-<li>The React frontend communicates with the FastAPI backend via HTTPS requests.</li>
-<li>The FastAPI backend queries the PostgreSQL database to perform CRUD (Create, Read, Update, Delete) operations on the data.</li>
-</ul>
 <h3 id="aws-specific-architecture-diagram"><strong>AWS Specific Architecture Diagram</strong><a class="headerlink" href="#aws-specific-architecture-diagram" title="Permanent link">&para;</a></h3>
 <p>This diagram shows a simplified view of the system hosted on AWS.</p>
 <p><img alt="AWS Architecture Diagram" src="../AWS_Arch_Diagram.png" /></p>

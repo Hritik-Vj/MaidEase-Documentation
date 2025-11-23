@@ -12,8 +12,10 @@
         <meta name="author" content="Hritik Vijay">
       
       
+        <link rel="canonical" href="https://maidease.example.com/Error_handling/">
       
-        <link rel="prev" href="../Architecture/">
+      
+        <link rel="prev" href="../Schema%20design%20and%20Data%20Flow%20Diagram/">
       
       
       
@@ -247,7 +249,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Use_cases/" class="md-tabs__link">
+      <a href="../use_cases/" class="md-tabs__link">
         
   
   
@@ -304,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Architecture/" class="md-tabs__link">
+      <a href="../Schema%20design%20and%20Data%20Flow%20Diagram/" class="md-tabs__link">
         
   
   
@@ -424,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Use_cases/" class="md-nav__link">
+      <a href="../use_cases/" class="md-nav__link">
         
   
   
@@ -490,7 +492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Architecture/" class="md-nav__link">
+      <a href="../Schema%20design%20and%20Data%20Flow%20Diagram/" class="md-nav__link">
         
   
   
@@ -606,24 +608,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#5-notifications-and-communication" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Notifications and Communication
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-system-and-network-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. System and Network Issues
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -664,23 +648,15 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <strong>Solution:</strong> The system responds with <em>“Invalid email or password.”</em></p>
 </li>
 <li>
-<p><strong>Problem:</strong> A deactivated or deleted user tries to log in.<br />
+<p><strong>Problem:</strong> A deactivated or deleted user tries to log in.(Future Scope)<br />
 <strong>Solution:</strong> The system shows <em>“Your account has been deactivated.”</em></p>
-</li>
-<li>
-<p><strong>Problem:</strong> An unauthenticated user tries to access restricted pages (e.g., Bookings or Profile).<br />
-<strong>Solution:</strong> The system redirects to the login screen with an <em>“Access denied”</em> message.</p>
-</li>
-<li>
-<p><strong>Problem:</strong> A customer attempts to access maid-only features (like updating availability).<br />
-<strong>Solution:</strong> The system shows <em>“You don’t have permission to perform this action.”</em></p>
 </li>
 </ul>
 <hr />
 <h2 id="2-booking-and-scheduling-issues"><strong>2. Booking and Scheduling Issues</strong><a class="headerlink" href="#2-booking-and-scheduling-issues" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>Problem:</strong> Customer selects a time slot when the maid is already booked.<br />
+<p><strong>Problem:</strong> Customer selects a time slot when the maid is already booked.(Future Scope)<br />
 <strong>Solution:</strong> The system notifies the customer with <em>“Selected time slot is unavailable. Please choose another.”</em></p>
 </li>
 <li>
@@ -688,15 +664,15 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <strong>Solution:</strong> The system prompts <em>“Please select a service and time before proceeding.”</em></p>
 </li>
 <li>
-<p><strong>Problem:</strong> A maid receives overlapping bookings.<br />
+<p><strong>Problem:</strong> A maid receives overlapping bookings.(Future Scope)<br />
 <strong>Solution:</strong> The system prevents the new booking and displays <em>“You already have a booking for this time.”</em></p>
 </li>
 <li>
-<p><strong>Problem:</strong> Customer tries to cancel a booking that has already been completed.<br />
+<p><strong>Problem:</strong> Customer tries to cancel a booking that has already been completed.(Future Scope)<br />
 <strong>Solution:</strong> The system blocks the request with <em>“Completed bookings cannot be canceled.”</em></p>
 </li>
 <li>
-<p><strong>Problem:</strong> Maid tries to accept a booking already confirmed by another maid.<br />
+<p><strong>Problem:</strong> Maid tries to accept a booking already confirmed by another maid.(Future Scope)<br />
 <strong>Solution:</strong> The system displays <em>“This booking is no longer available.”</em></p>
 </li>
 </ul>
@@ -704,7 +680,7 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <h2 id="3-profile-and-data-management"><strong>3. Profile and Data Management</strong><a class="headerlink" href="#3-profile-and-data-management" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>Problem:</strong> Maid saves a profile without filling all required fields (like skills or hourly rate).<br />
+<p><strong>Problem:</strong> Maid saves a profile without filling all required fields (like skills or hourly rate).(Future Scope)<br />
 <strong>Solution:</strong> The system highlights missing fields with <em>“Please complete all required details.”</em></p>
 </li>
 <li>
@@ -723,46 +699,8 @@ From login errors to booking conflicts, the system provides clear feedback to us
 <hr />
 <h2 id="4-review-and-feedback"><strong>4. Review and Feedback</strong><a class="headerlink" href="#4-review-and-feedback" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><strong>Problem:</strong> Customer tries to post a review before the booking is completed.<br />
-<strong>Solution:</strong> The system prevents it and shows <em>“You can only review completed bookings.”</em></p>
-</li>
-<li>
-<p><strong>Problem:</strong> Customer attempts to submit multiple reviews for the same service.<br />
-<strong>Solution:</strong> The system displays <em>“You’ve already reviewed this booking.”</em></p>
-</li>
-<li>
-<p><strong>Problem:</strong> Maid tries to edit or delete a customer review.<br />
-<strong>Solution:</strong> The system responds with <em>“You are not authorized to modify reviews.”</em></p>
-</li>
-</ul>
-<hr />
-<h2 id="5-notifications-and-communication"><strong>5. Notifications and Communication</strong><a class="headerlink" href="#5-notifications-and-communication" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p><strong>Problem:</strong> Email or SMS notification fails due to invalid contact information.<br />
-<strong>Solution:</strong> The system retries once and logs the failure in <strong>CloudWatch</strong> for review.</p>
-</li>
-<li>
-<p><strong>Problem:</strong> User’s device blocks app notifications.<br />
-<strong>Solution:</strong> The app displays <em>“Notifications are disabled. Enable them to stay updated.”</em></p>
-</li>
-</ul>
-<hr />
-<h2 id="6-system-and-network-issues"><strong>6. System and Network Issues</strong><a class="headerlink" href="#6-system-and-network-issues" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p><strong>Problem:</strong> Network failure or backend downtime occurs.<br />
-<strong>Solution:</strong> The app shows a friendly message: <em>“We’re having trouble connecting. Please try again later.”</em></p>
-</li>
-<li>
-<p><strong>Problem:</strong> User’s session expires while in use.<br />
-<strong>Solution:</strong> The system logs the user out and shows <em>“Session expired. Please log in again.”</em></p>
-</li>
-<li>
-<p><strong>Problem:</strong> Unexpected server error (FastAPI internal issue).<br />
-<strong>Solution:</strong> The system shows <em>“Something went wrong. Please try again.”</em> and logs the details for developers.</p>
-</li>
+<li><strong>Problem:</strong> Customer attempts to submit multiple reviews for the same service.(Future Scope)<br />
+<strong>Solution:</strong> The system displays <em>“You’ve already reviewed this booking.”</em></li>
 </ul>
 
 

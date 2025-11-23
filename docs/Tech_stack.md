@@ -19,6 +19,7 @@
 |--------------|------------------------|
 | Framework | FastAPI (Python 3.12) |
 | Database Interaction | SQLAlchemy ORM |
+| Data Validation | Pydantic |
 | Authentication | JWT (Access + Refresh Tokens) |
 | Password Hashing | Argon2 (Passlib + argon2-cffi) |
 | Deployment | AWS EC2 |

@@ -12,11 +12,13 @@
         <meta name="author" content="Hritik Vijay">
       
       
+        <link rel="canonical" href="https://maidease.example.com/Authentication/">
+      
       
         <link rel="prev" href="../Tech_stack/">
       
       
-        <link rel="next" href="../Architecture/">
+        <link rel="next" href="../Schema%20design%20and%20Data%20Flow%20Diagram/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -249,7 +251,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Use_cases/" class="md-tabs__link">
+      <a href="../use_cases/" class="md-tabs__link">
         
   
   
@@ -308,7 +310,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Architecture/" class="md-tabs__link">
+      <a href="../Schema%20design%20and%20Data%20Flow%20Diagram/" class="md-tabs__link">
         
   
   
@@ -426,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Use_cases/" class="md-nav__link">
+      <a href="../use_cases/" class="md-nav__link">
         
   
   
@@ -535,21 +537,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Authentication Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Registration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-protected-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Protected Routes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-token-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Token Refresh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#authentication-flow-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       Authentication Flow Diagram
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authentication
     </span>
   </a>
   
@@ -570,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Architecture/" class="md-nav__link">
+      <a href="../Schema%20design%20and%20Data%20Flow%20Diagram/" class="md-nav__link">
         
   
   
@@ -625,42 +669,89 @@
 
 <h1 id="authentication-authorization-overview"><strong>Authentication &amp; Authorization Overview</strong><a class="headerlink" href="#authentication-authorization-overview" title="Permanent link">&para;</a></h1>
 <hr />
-<h3 id="authentication"><strong>Authentication</strong><a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
-<p>MaidEase uses a <strong>token based authentication system</strong>, a standard and secure method for protecting API endpoints and managing user sessions. When a user logs in, the system generates a unique token that must be sent with all subsequent requests to verify the user's identity.</p>
+<h2 id="authentication"><strong>Authentication</strong><a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>MaidEase uses a <strong>JWT-based authentication system</strong> with both <strong>Access Tokens</strong> and <strong>Refresh Tokens</strong>.<br />
+This ensures secure session handling between the React frontend and the FastAPI backend.</p>
+<p>When a user logs in, the backend generates:</p>
+<ul>
+<li><strong>Access Token</strong> (short lifespan)</li>
+<li><strong>Refresh Token</strong> (long lifespan)</li>
+</ul>
+<p>Both tokens are returned to the frontend and stored in <strong>localStorage</strong>.</p>
+<p>All protected API calls must include the Access Token in:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Authorization: Bearer &lt;access_token&gt;
+</code></pre></div>
 <hr />
-<h3 id="authentication-flow"><strong>Authentication Flow</strong><a class="headerlink" href="#authentication-flow" title="Permanent link">&para;</a></h3>
+<h2 id="authentication-flow"><strong>Authentication Flow</strong><a class="headerlink" href="#authentication-flow" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>User Registration:</strong> New users sign up by providing an email, password, and their designated role (<strong>Customer</strong> or <strong>Maid</strong>).</p>
+<h3 id="user-registration"><strong>User Registration</strong><a class="headerlink" href="#user-registration" title="Permanent link">&para;</a></h3>
+   Users register with:</li>
+<li>email  </li>
+<li>full_name  </li>
+<li>phone_number  </li>
+<li>role (<strong>customer</strong> or <strong>maid</strong>)  </li>
+<li>password  </li>
+</ol>
+<p>Backend stores passwords using <strong>Argon2 hashing</strong>.</p>
+<ol>
+<li>
+<h3 id="login"><strong>Login</strong><a class="headerlink" href="#login" title="Permanent link">&para;</a></h3>
+</li>
+<li>User submits email + password  </li>
+<li>Backend verifies credentials  </li>
+<li>Backend returns:<ul>
+<li><strong>access_token</strong></li>
+<li><strong>refresh_token</strong></li>
+<li><strong>token_type: bearer</strong></li>
+</ul>
 </li>
 <li>
-<p><strong>Login:</strong> Upon successful login, the backend generates a <strong>JSON Web Token (JWT)</strong>. This token is sent to the client-side application and stored securely.</p>
+<p>Frontend stores tokens using <code>setTokens()</code>.</p>
 </li>
 <li>
-<p><strong>Authorization:</strong> To access any protected endpoint, the client must include the JWT in the request's authorization header. The backend validates the token to ensure the user is authenticated and has the necessary permissions for the requested action.</p>
+<h3 id="accessing-protected-routes"><strong>Accessing Protected Routes</strong><a class="headerlink" href="#accessing-protected-routes" title="Permanent link">&para;</a></h3>
+</li>
+<li>Axios interceptor attaches the Access Token automatically  </li>
+<li>Backend validates token using <code>python-jose</code>  </li>
+<li>
+<p>User identity is extracted from token payload (<code>user_id</code>, <code>role</code>)</p>
 </li>
 <li>
-<p><strong>Refresh Token:</strong> When the access token expires, the frontend sends a POST request to /auth/refresh, where the backend validates the refresh token and issues a new access token.</p>
+<h3 id="automatic-token-refresh"><strong>Automatic Token Refresh</strong><a class="headerlink" href="#automatic-token-refresh" title="Permanent link">&para;</a></h3>
+<p>When Access Token expires:</p>
+</li>
+<li>Axios sends request to <code>/auth/refresh</code></li>
+<li>Backend verifies refresh token  </li>
+<li>New Access Token is issued  </li>
+<li>
+<p>Frontend updates localStorage  </p>
 </li>
 <li>
-<p><strong>Logout:</strong> The logout process involves deleting the token from the client's storage, effectively ending the user's session.</p>
+<h3 id="logout"><strong>Logout</strong><a class="headerlink" href="#logout" title="Permanent link">&para;</a></h3>
 </li>
+<li>Frontend clears both tokens  </li>
+<li>User session ends  </li>
 </ol>
 <hr />
-<h3 id="authentication-flow-diagram"><strong>Authentication Flow Diagram</strong><a class="headerlink" href="#authentication-flow-diagram" title="Permanent link">&para;</a></h3>
+<h2 id="authentication-flow-diagram"><strong>Authentication Flow Diagram</strong><a class="headerlink" href="#authentication-flow-diagram" title="Permanent link">&para;</a></h2>
 <p><img alt="Auth Flow Diagram" src="../Auth_flow.png" /></p>
-<h3 id="authentication_1"><strong>Authentication</strong><a class="headerlink" href="#authentication_1" title="Permanent link">&para;</a></h3>
-<p>MaidEase uses a <strong>Role-Based Access Control (RBAC)</strong> model to manage what each user can do within the platform.
-There are two main roles for authenticated users: Customer and Maid. Guests (unauthenticated users) have limited access.</p>
-<p><strong>Permission Summary</strong></p>
+<hr />
+<h1 id="authorization-rbac-role-based-access-control"><strong>Authorization (RBAC — Role-Based Access Control)</strong><a class="headerlink" href="#authorization-rbac-role-based-access-control" title="Permanent link">&para;</a></h1>
+<p>MaidEase uses <strong>role-based authorization</strong>.<br />
+Users have one of two roles defined in the database:</p>
+<ul>
+<li><strong>customer</strong></li>
+<li><strong>maid</strong></li>
+</ul>
+<hr />
+<h2 id="permission-summary"><strong>Permission Summary</strong><a class="headerlink" href="#permission-summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th><strong>Feature / Action</strong></th>
-<th style="text-align: center;"><strong>Guest</strong></th>
 <th style="text-align: center;"><strong>Customer</strong></th>
 <th style="text-align: center;"><strong>Maid</strong></th>
-<th><strong>Conditions / Notes</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -668,78 +759,51 @@ There are two main roles for authenticated users: Customer and Maid. Guests (una
 <td><strong>Register / Login</strong></td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>All users can register and log in.</td>
 </tr>
 <tr>
 <td><strong>View Maid Profiles</strong></td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>Guests see limited info; full access for logged-in users.</td>
+<td style="text-align: center;">❌</td>
 </tr>
 <tr>
 <td><strong>Create / Manage Maid Profile</strong></td>
 <td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
-<td>Only maids can edit their profile and availability.</td>
 </tr>
 <tr>
 <td><strong>Create Booking</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">❌</td>
-<td>Customers can book available maids.</td>
 </tr>
 <tr>
 <td><strong>View Bookings</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
-<td>Each user sees only their own bookings.</td>
 </tr>
 <tr>
 <td><strong>Accept / Reject Booking</strong></td>
 <td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
-<td>Only maids can accept or reject requests.</td>
 </tr>
 <tr>
 <td><strong>Cancel Booking</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
-<td>Either party can cancel before completion.</td>
 </tr>
 <tr>
-<td><strong>Mark as Completed</strong></td>
-<td style="text-align: center;">❌</td>
+<td><strong>Mark Booking Completed</strong></td>
 <td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
-<td>Maids can mark jobs complete.</td>
 </tr>
 <tr>
 <td><strong>Post Review</strong></td>
-<td style="text-align: center;">❌</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">❌</td>
-<td>Customers can review completed bookings.</td>
 </tr>
 <tr>
 <td><strong>View Reviews</strong></td>
 <td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>Publicly visible.</td>
-</tr>
-<tr>
-<td><strong>Notifications</strong></td>
 <td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>Automated system-triggered updates.</td>
 </tr>
 </tbody>
 </table>

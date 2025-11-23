@@ -12,8 +12,10 @@
         <meta name="author" content="Hritik Vijay">
       
       
+        <link rel="canonical" href="https://maidease.example.com/Tech_stack/">
       
-        <link rel="prev" href="../Use_cases/">
+      
+        <link rel="prev" href="../use_cases/">
       
       
         <link rel="next" href="../Authentication/">
@@ -249,7 +251,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Use_cases/" class="md-tabs__link">
+      <a href="../use_cases/" class="md-tabs__link">
         
   
   
@@ -308,7 +310,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Architecture/" class="md-tabs__link">
+      <a href="../Schema%20design%20and%20Data%20Flow%20Diagram/" class="md-tabs__link">
         
   
   
@@ -426,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Use_cases/" class="md-nav__link">
+      <a href="../use_cases/" class="md-nav__link">
         
   
   
@@ -561,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Architecture/" class="md-nav__link">
+      <a href="../Schema%20design%20and%20Data%20Flow%20Diagram/" class="md-nav__link">
         
   
   
@@ -614,8 +616,8 @@
 
 
 
-<h1 id="maidease-technology-stack">MaidEase — Technology Stack<a class="headerlink" href="#maidease-technology-stack" title="Permanent link">&para;</a></h1>
-<h2 id="frontend-reactjs">Frontend (React.js)<a class="headerlink" href="#frontend-reactjs" title="Permanent link">&para;</a></h2>
+<h1 id="maidease-technology-stack"><strong>MaidEase — Technology Stack</strong><a class="headerlink" href="#maidease-technology-stack" title="Permanent link">&para;</a></h1>
+<h2 id="frontend-reactjs"><strong>Frontend (React.js)</strong><a class="headerlink" href="#frontend-reactjs" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -626,11 +628,11 @@
 <tbody>
 <tr>
 <td>Framework</td>
-<td>React.js</td>
+<td>React.js (Vite)</td>
 </tr>
 <tr>
 <td>Type</td>
-<td>Progressive Web App (PWA)</td>
+<td>Standard React Application</td>
 </tr>
 <tr>
 <td>Routing</td>
@@ -638,16 +640,20 @@
 </tr>
 <tr>
 <td>State Management</td>
-<td>Redux Toolkit</td>
+<td>React Context API</td>
+</tr>
+<tr>
+<td>API Handling</td>
+<td>Axios (Interceptors + Token Refresh)</td>
 </tr>
 <tr>
 <td>Deployment</td>
-<td>AWS EC2</td>
+<td>EC2</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="backend-fastapi">Backend (FastAPI)<a class="headerlink" href="#backend-fastapi" title="Permanent link">&para;</a></h2>
+<h2 id="backend-fastapi"><strong>Backend (FastAPI)</strong><a class="headerlink" href="#backend-fastapi" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -658,7 +664,7 @@
 <tbody>
 <tr>
 <td>Framework</td>
-<td>FastAPI (Python 3.11)</td>
+<td>FastAPI (Python 3.12)</td>
 </tr>
 <tr>
 <td>Database Interaction</td>
@@ -666,11 +672,15 @@
 </tr>
 <tr>
 <td>Authentication</td>
-<td>JWT (JSON Web Tokens)</td>
+<td>JWT (Access + Refresh Tokens)</td>
+</tr>
+<tr>
+<td>Password Hashing</td>
+<td>Argon2 (Passlib + argon2-cffi)</td>
 </tr>
 <tr>
 <td>Deployment</td>
-<td>Vercel / AWS EC2</td>
+<td>AWS EC2</td>
 </tr>
 <tr>
 <td>API Structure</td>
@@ -679,7 +689,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="database-postgresql">Database (PostgreSQL)<a class="headerlink" href="#database-postgresql" title="Permanent link">&para;</a></h2>
+<h2 id="database-postgresql"><strong>Database (PostgreSQL)</strong><a class="headerlink" href="#database-postgresql" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -706,7 +716,7 @@
 </tr>
 <tr>
 <td>Backup &amp; Security</td>
-<td>Automated Backups, Role-based Access</td>
+<td>Role-based Access(RBAC)</td>
 </tr>
 </tbody>
 </table>
