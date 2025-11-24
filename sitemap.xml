@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://maidease.example.com/</loc>
-         <lastmod>2025-11-22</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://maidease.example.com/Authentication/</loc>
-         <lastmod>2025-11-22</lastmod>
+         <lastmod>2025-11-24</lastmod>
+    </url>
+    <url>
+         <loc>https://maidease.example.com/CD_Pipeline_and_Deployment_Flow/</loc>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://maidease.example.com/Error_handling/</loc>
-         <lastmod>2025-11-22</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://maidease.example.com/Functional_flow/</loc>
-         <lastmod>2025-11-22</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://maidease.example.com/Schema%20design%20and%20Data%20Flow%20Diagram/</loc>
-         <lastmod>2025-11-22</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://maidease.example.com/Tech_stack/</loc>
-         <lastmod>2025-11-22</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://maidease.example.com/use_cases/</loc>
-         <lastmod>2025-11-22</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
 </urlset>

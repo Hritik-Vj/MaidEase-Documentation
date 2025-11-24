@@ -12,13 +12,11 @@
         <meta name="author" content="Hritik Vijay">
       
       
-        <link rel="canonical" href="https://maidease.example.com/Tech_stack/">
+        <link rel="canonical" href="https://maidease.example.com/CD_Pipeline_and_Deployment_Flow/">
       
       
-        <link rel="prev" href="../use_cases/">
+        <link rel="prev" href="../Error_handling/">
       
-      
-        <link rel="next" href="../Authentication/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +24,7 @@
     
     
       
-        <title>Tech Stack - MaidEase Documentation</title>
+        <title>CI/CD Pipeline and Deployment Flow - MaidEase Documentation</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#maidease-technology-stack" class="md-skip">
+        <a href="#cicd-pipeline-and-deployment-flow" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tech Stack
+              CI/CD Pipeline and Deployment Flow
             
           </span>
         </div>
@@ -268,11 +266,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../Tech_stack/" class="md-tabs__link">
         
   
   
@@ -346,9 +342,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../CD_Pipeline_and_Deployment_Flow/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -466,32 +464,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Tech Stack
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Tech_stack/" class="md-nav__link">
         
   
   
@@ -502,53 +478,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#frontend-reactjs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Frontend (React.js)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backend (FastAPI)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#database-postgresql" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database (PostgreSQL)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -623,10 +552,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../CD_Pipeline_and_Deployment_Flow/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CI/CD Pipeline and Deployment Flow
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -637,6 +588,137 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-pipeline-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Pipeline Triggers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Pipeline Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actions Workflows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Steps:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-security-scanning-sast-dast" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Security Scanning (SAST &amp; DAST)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-sast-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend SAST Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-sast-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend SAST Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-scanning-dast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Scanning (DAST)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Scanning (DAST)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend-dast-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend DAST Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -657,114 +739,124 @@
 
 
 
-<h1 id="maidease-technology-stack"><strong>MaidEase — Technology Stack</strong><a class="headerlink" href="#maidease-technology-stack" title="Permanent link">&para;</a></h1>
-<h2 id="frontend-reactjs"><strong>Frontend (React.js)</strong><a class="headerlink" href="#frontend-reactjs" title="Permanent link">&para;</a></h2>
+<h1 id="cicd-pipeline-and-deployment-flow">CI/CD Pipeline and Deployment Flow<a class="headerlink" href="#cicd-pipeline-and-deployment-flow" title="Permanent link">&para;</a></h1>
+<p>This document outlines the CI/CD pipeline for the MaidEase application, from code commit to deployment on AWS.</p>
+<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
+<p>The CI/CD pipeline is triggered on every push to the deploy branch of the frontend and backend repositories. The pipeline is managed using CI/CD flow from GitHub Actions.</p>
+<h2 id="deployment-flow">Deployment Flow<a class="headerlink" href="#deployment-flow" title="Permanent link">&para;</a></h2>
+<p>The following diagram illustrates the complete deployment and operational flow of the MaidEase application, from development to user interaction.</p>
+<p><img alt="AWS Architecture Diagram" src="../AWS_Arch_Diagram.png" /></p>
+<h2 id="1-pipeline-triggers">1. Pipeline Triggers<a class="headerlink" href="#1-pipeline-triggers" title="Permanent link">&para;</a></h2>
+<h3 id="branches">Branches<a class="headerlink" href="#branches" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>deploy</code><br />
+  Main deployment branch. Whenever I push to this branch, the CI/CD pipeline runs and deploys to the respective EC2 instance (frontend or backend).</li>
+</ul>
+<h3 id="github-actions-workflows">GitHub Actions Workflows<a class="headerlink" href="#github-actions-workflows" title="Permanent link">&para;</a></h3>
+<p>Each repo has its own workflow file:</p>
+<p>GitHub Actions Workflow (.github/workflows/deploy.yml)</p>
+<p>Backend 
+- Deploy: automatically deployed to the deploy EC2 instance.</p>
+<p><code>.github/workflows/deploy-backend.yml</code></p>
+<p><img alt="Backend Deploy script" src="../Backend_deploy_script.png" /></p>
+<p>Frontend<br />
+- Deploy: automatically deployed to the deploy EC2 instance.</p>
+<ul>
+<li><code>.github/workflows/deploy-frontend.yml</code></li>
+</ul>
+<p><img alt="Frontend Deploy Script" src="../Frontend_deploy_script.png" /></p>
+<h3 id="deployment-steps">Deployment Steps:<a class="headerlink" href="#deployment-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Frontend Deployment</strong>: The CI/CD pipeline, triggered by a push to the frontend repository's <code>deploy</code> branch, automatically deploys the frontend application to an <strong>Amazon Backend EC2 instance</strong>.</li>
+<li><strong>Backend Deployment</strong>: Similarly, a push to the backend repository's <code>deploy</code> branch triggers the pipeline to deploy the backend application to another <strong>Amazon Backend EC2 instance</strong>.</li>
+</ol>
+<h2 id="2-security-scanning-sast-dast">2. Security Scanning (SAST &amp; DAST)<a class="headerlink" href="#2-security-scanning-sast-dast" title="Permanent link">&para;</a></h2>
+<p><strong>Tool</strong>: Aikido Domain Scan(for both SAST &amp; DAST)</p>
+<h2 id="backend-sast-summary">Backend SAST Summary<a class="headerlink" href="#backend-sast-summary" title="Permanent link">&para;</a></h2>
+<p><strong>Total Issues Found: 3</strong></p>
 <table>
 <thead>
 <tr>
-<th><strong>Component</strong></th>
-<th><strong>Technology / Tool</strong></th>
+<th>Issue</th>
+<th>Severity</th>
+<th>What It Means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Framework</td>
-<td>React.js (Vite)</td>
+<td>Unpinned GitHub Actions</td>
+<td>Medium</td>
+<td>The deploy workflow is not locked to a version, which can allow unwanted changes from third party actions.</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>Standard React Application</td>
+<td>python-multipart</td>
+<td>Low</td>
+<td>The multipart parser can be misused to create heavy requests that slow down the server.</td>
 </tr>
 <tr>
-<td>Routing</td>
-<td>React Router</td>
-</tr>
-<tr>
-<td>State Management</td>
-<td>React Context API</td>
-</tr>
-<tr>
-<td>API Handling</td>
-<td>Axios (Interceptors + Token Refresh)</td>
-</tr>
-<tr>
-<td>Deployment</td>
-<td>EC2</td>
+<td>python-jose</td>
+<td>Low</td>
+<td>Error messages can leak internal details if not handled carefully.</td>
 </tr>
 </tbody>
 </table>
+<p>These checks help keep the API, auth system and CI process safe.</p>
+<p><img alt="Backend SAST" src="../Backend_SAST.png" /></p>
 <hr />
-<h2 id="backend-fastapi"><strong>Backend (FastAPI)</strong><a class="headerlink" href="#backend-fastapi" title="Permanent link">&para;</a></h2>
+<h2 id="frontend-sast-summary">Frontend SAST Summary<a class="headerlink" href="#frontend-sast-summary" title="Permanent link">&para;</a></h2>
+<p><strong>Total Issues Found: 2</strong></p>
 <table>
 <thead>
 <tr>
-<th><strong>Component</strong></th>
-<th><strong>Technology / Tool</strong></th>
+<th>Issue</th>
+<th>Severity</th>
+<th>What It Means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Framework</td>
-<td>FastAPI (Python 3.12)</td>
+<td>Rollup XSS risk</td>
+<td>Medium</td>
+<td>The build process can allow unsafe input to reach the UI, which may create XSS problems.</td>
 </tr>
 <tr>
-<td>Database Interaction</td>
-<td>SQLAlchemy ORM</td>
-</tr>
-<tr>
-<td>Data Validation</td>
-<td>Pydantic</td>
-</tr>
-<tr>
-<td>Authentication</td>
-<td>JWT (Access + Refresh Tokens)</td>
-</tr>
-<tr>
-<td>Password Hashing</td>
-<td>Argon2 (Passlib + argon2-cffi)</td>
-</tr>
-<tr>
-<td>Deployment</td>
-<td>AWS EC2</td>
-</tr>
-<tr>
-<td>API Structure</td>
-<td>RESTful APIs</td>
+<td>3rd party Github Actions should be pinned</td>
+<td>Medium</td>
+<td>The workflow uses unpinned versions, which can introduce supply chain risks.</td>
 </tr>
 </tbody>
 </table>
+<p>These scans protect the user interface and the build process from security issues.</p>
+<p><img alt="Frontend SAST" src="../Frontend_SAST.png" /></p>
 <hr />
-<h2 id="database-postgresql"><strong>Database (PostgreSQL)</strong><a class="headerlink" href="#database-postgresql" title="Permanent link">&para;</a></h2>
+<h2 id="security-scanning-dast">Security Scanning (DAST)<a class="headerlink" href="#security-scanning-dast" title="Permanent link">&para;</a></h2>
+<h3 id="frontend-dast-summary">Frontend DAST Summary<a class="headerlink" href="#frontend-dast-summary" title="Permanent link">&para;</a></h3>
+<p><strong>Target area</strong>: currently scanning the login page at the production URL.</p>
+<p><strong>Total Issues Found: 2</strong></p>
 <table>
 <thead>
 <tr>
-<th><strong>Component</strong></th>
-<th><strong>Technology / Tool</strong></th>
+<th>Issue</th>
+<th>Severity</th>
+<th>What It Means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Database</td>
-<td>PostgreSQL</td>
+<td>Content Security Policy (CSP) header not set</td>
+<td>Critical</td>
+<td>The application is missing a Content Security Policy, which makes it vulnerable to Cross-Site Scripting (XSS) and other injection attacks.</td>
 </tr>
 <tr>
-<td>Schema Design</td>
-<td>Normalized Tables</td>
-</tr>
-<tr>
-<td>Data Access Layer</td>
-<td>SQLAlchemy ORM</td>
-</tr>
-<tr>
-<td>Performance Optimization</td>
-<td>Indexed Columns</td>
-</tr>
-<tr>
-<td>Backup &amp; Security</td>
-<td>Role-based Access(RBAC)</td>
+<td>Missing Anti-clickjacking header</td>
+<td>Medium</td>
+<td>The lack of an X-Frame-Options header makes the application vulnerable to clickjacking attacks.</td>
 </tr>
 </tbody>
 </table>
+<p>These scans protect the user interface and the build process from security issues.</p>
+<p><img alt="Frontend DAST" src="../Frontend_DAST.png" /></p>
+<hr />
 
 
 
