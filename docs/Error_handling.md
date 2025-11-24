@@ -44,7 +44,7 @@ From login errors to booking conflicts, the system provides clear feedback to us
 - **Problem:** Maid saves a profile without filling all required fields (like skills or hourly rate).(Future Scope)  
   **Solution:** The system highlights missing fields with *“Please complete all required details.”*
 
-- **Problem:** User uploads an unsupported file format or an oversized image.  
+- **Problem:** User uploads an unsupported file format or an oversized image.(Future scope)  
   **Solution:** The system shows *“Invalid file format or file size too large.”*
 
 - **Problem:** Maid adds overlapping time slots in availability.  

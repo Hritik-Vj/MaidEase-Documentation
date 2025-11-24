@@ -44,3 +44,5 @@ nav:
   - 'Authentication': 'Authentication.md'
   - 'Architecture': 'Schema design and Data Flow Diagram.md'
   - 'Error Handling': 'Error_handling.md'
+  - 'CI/CD Pipeline and Deployment Flow': 'CD_Pipeline_and_Deployment_Flow.md'
+
